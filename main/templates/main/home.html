@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block content %}
-    <div style="height: 50%">
-		<div id="carouselExampleControls" class="carousel slide container" data-ride="carousel">
+    <div style="height: 50%" class="col-lg-10 mx-auto">
+		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 			  <div class="carousel-inner">
 			    <div class="carousel-item active">
 			      <img class="d-block w-100" src="{% static 'main/pic1.jpeg' %}" alt="First slide">
@@ -27,27 +27,165 @@
 	    </div>
 	  </div>
 
+
+
 	  <div class="container my-5">
 	  	<div class="row">
-		  {% for article in articles %}
 
-	          <div class="col col-lg-4">
-	            <div class="card" style="width: 18rem;">
-	                <img class="card-img-top" src="{{ article.image.url }}" alt="Card image cap">
-	                <div class="card-body">
-	                    <h5 class="card-title">{{ article.title }} </h5>
-                        {% if article.description %}
-	                        <p class="card-text">{{ article.description }}</p>
-                        {% else %}
-                            <p class="card-text">{{ article.content }}</p>
-                        {% endif %}
-	                    <a href="#" class="btn btn-primary">Read</a>
-	                 </div>
-	            </div>
-	          </div>
 
-		  {% endfor %}
-		</div>
+
+	  		<div class="col-lg-7 custom-shadow mr-2 px-2 py-3 custom-category">
+	  			<div class="row">
+		  			<div class="col-lg-6">
+		  				<!--
+		  					CARD
+		  				-->
+				          
+				            <div class="card mx-auto" style="width: 18rem;" id="card">
+				                <img class="card-img-top" src="{{ articles.first.image.url }}" alt="Card image cap">
+				                <div class="card-body">
+				                    <h5 class="custom-category-card-title">{{ articles.first.title }} </h5>
+				                    <div>
+				                        {% if article.description %}
+					                        <p class="card-text custom-category-card-content">{{ articles.first.description }}</p>
+				                        {% else %}
+				                            <p class="card-text custom-category-card-content">{{ articles.first.content }}</p>
+				                        {% endif %}
+			                    	</div>
+				                    <a class="btn btn-primary">Read</a>
+				                 </div>
+				            </div>
+				          
+				        <!--
+		  					CARD FINISH
+		  				-->
+		  			</div>
+
+
+
+		  			<div class="col-lg-6">
+		  				<!--
+		  					List
+		  				-->
+		  				<div class="list-group mx-auto">
+		  					{% for article in articles %}
+								  <a  class="list-group-item list-group-item-action py-0 px-0 my-1 custom-card-toggle" style="height: 100px">
+								    <div class="d-flex w-100 justify-content-between">
+								      <img src="{{ article.image.url }}" style="width: 50%; height: 100px">
+								      	<div class="mx-1 px-1 py-1">
+									      <h5 class="mb-1 text-center custom-list-item-title">{{ article.title }}</h5>
+									      <div class="custom-content-description" style="line-height: 1;font-size: 13px;text-overflow: ellipsis;overflow: hidden;display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;" >
+									      	{% if article.description %}
+									      		{{ article.description }}
+									      	{% else %}
+									      		{{ article.content }}
+									      	{% endif %}
+									      </div>
+								      	</div>
+								    </div>
+								  </a>
+							 {% endfor %}
+						</div>
+						<!--
+		  					List FINISH
+		  				-->
+		  			</div>
+	  			</div>
+	  		</div>
+
+	  		<div class="col-lg-4 custom-shadow">
+	  			<!--
+	  				List
+	  			-->
+	  		</div>
+
+
+
+	  	</div>
 	  </div>
+
+
+
+
+
+<div class="container my-5">
+	  	<div class="row">
+
+
+	  		<div class="col-lg-4 custom-shadow">
+	  			<!--
+	  				List
+	  			-->
+	  		</div>
+	  		
+	  		<div class="col-lg-7 custom-shadow mr-2 px-2 py-3 custom-category">
+	  			<div class="row">
+		  			<div class="col-lg-6">
+		  				<!--
+		  					CARD
+		  				-->
+				          
+				            <div class="card mx-auto" style="width: 18rem;" id="card">
+				                <img class="card-img-top" src="{{ articles.first.image.url }}" alt="Card image cap">
+				                <div class="card-body">
+				                    <h5 class="custom-category-card-title">{{ articles.first.title }} </h5>
+				                    <div>
+				                        {% if article.description %}
+					                        <p class="card-text custom-category-card-content">{{ articles.first.description }}</p>
+				                        {% else %}
+				                            <p class="card-text custom-category-card-content">{{ articles.first.content }}</p>
+				                        {% endif %}
+			                    	</div>
+				                    <a class="btn btn-primary">Read</a>
+				                 </div>
+				            </div>
+				          
+				        <!--
+		  					CARD FINISH
+		  				-->
+		  			</div>
+
+
+
+		  			<div class="col-lg-6">
+		  				<!--
+		  					List
+		  				-->
+		  				<div class="list-group mx-auto">
+		  					{% for article in articles %}
+								  <a  class="list-group-item list-group-item-action py-0 px-0 my-1 custom-card-toggle" style="height: 100px">
+								    <div class="d-flex w-100 justify-content-between">
+								      <img src="{{ article.image.url }}" style="width: 50%; height: 100px">
+								      	<div class="mx-1 px-1 py-1">
+									      <h5 class="mb-1 text-center custom-list-item-title">{{ article.title }}</h5>
+									      <div class="custom-content-description" style="line-height: 1;font-size: 13px;text-overflow: ellipsis;overflow: hidden;display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;" >
+									      	{% if article.description %}
+									      		{{ article.description }}
+									      	{% else %}
+									      		{{ article.content }}
+									      	{% endif %}
+									      </div>
+								      	</div>
+								    </div>
+								  </a>
+							 {% endfor %}
+						</div>
+						<!--
+		  					List FINISH
+		  				-->
+		  			</div>
+	  			</div>
+	  		</div>
+
+	  		
+
+
+
+	  	</div>
+	  </div>
+
+
+
+
 
 {% endblock content %}
