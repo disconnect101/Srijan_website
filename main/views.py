@@ -23,3 +23,10 @@ def uploadArticle(request):
 	form = ArticleForm()
 	context['form'] = form
 	return render(request, 'main/upload_article.html', context)
+
+def articles(request):
+	id = request.GET['id']
+	article = Articles.objects.get(id=id)
+	print("this is the title : " + article.title)
+
+	return render(request, 'main/article.html', {'article': article})

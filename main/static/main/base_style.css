@@ -2,14 +2,14 @@ body{
 	background-size: 300px;
 }
 
-/*.custom-background{
+.custom-background{
 	/*background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
 	background-size: 400% 400%;
-	animation: ani-gra 10s ease-in-out infinite;
+	animation: ani-gra 10s ease-in-out infinite;*/
 	background: url("faintlogo.png") no-repeat center fixed;
 	background-size: 50vh;
 }
-*/
+
 
 @keyframes ani-gra {
 	0%{
@@ -47,7 +47,7 @@ body{
 	text-overflow: ellipsis;
 	overflow: hidden;
 	display: -webkit-box;
-	-webkit-line-clamp: 10;
+	-webkit-line-clamp: 9;
 	-webkit-box-orient: vertical;
 }
 

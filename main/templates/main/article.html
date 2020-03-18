@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container mt-4">
+
+        <div class="row">
+            <div  class="col-lg-8">
+                <div>
+                    <div>
+                        <h3 class="mb-n1">{{ article.title }}</h3>
+                        <span class="text-muted">By- {{ article.author }}</span>
+                    </div>
+                    <hr>
+                    
+                    <img src="{{ article.image.url }}" class="img-fluid">
+
+                    <div class="mt-4">
+                        {{ article.content }}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}
