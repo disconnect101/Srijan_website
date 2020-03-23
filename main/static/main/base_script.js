@@ -6,7 +6,7 @@ $(document).ready(function () {
         var content = $(this).find('.custom-content-description').text();
         var href = $(this).find('input').val();
 
-        alert(href);
+
         
         $(this).parents('.custom-category').find('.card').children("img").attr("src", imgsrc);
         $(this).parents('.custom-category').find('.card').find('.custom-category-card-title').text(title);

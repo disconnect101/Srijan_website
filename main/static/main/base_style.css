@@ -47,6 +47,7 @@ body{
 	text-overflow: ellipsis;
 	overflow: hidden;
 	display: -webkit-box;
+	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 9;
 	-webkit-box-orient: vertical;
 }
@@ -56,4 +57,16 @@ body{
 }
 .custom-shadow-right{
 	box-shadow: 0 10px 20px -10px;
+}
+
+.custom-category{
+	background-color: #fff;
+}
+
+.custom-article{
+	background-color: #fff;
+}
+
+.custom-recent{
+	background-color: #fff;
 }

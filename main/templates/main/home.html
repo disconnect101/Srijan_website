@@ -29,7 +29,7 @@
 		      <span class="sr-only">Next</span>
 		    </a>
 	    </div>
-	  </div>
+	</div>
 
 
 
@@ -84,7 +84,7 @@
 								  <a   class="list-group-item list-group-item-action py-0 px-0 my-1 custom-card-toggle" style="height: 100px">
 
 								  	<input type="hidden" name="href" value="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">
-								  	
+
 								    <div class="d-flex w-100 justify-content-between">
 								      <img src="{{ article.image.url }}" style="width: 50%; height: 100px">
 								      	<div class="mx-1 px-1 py-1">
@@ -108,7 +108,7 @@
 	  			</div>
 	  		</div>
 
-	  		<div class="col-lg-4 shadow py-3">
+	  		<div class="col-lg-4 shadow py-3 custom-category">
 	  			<!--
 	  				List
 	  			-->
@@ -120,7 +120,7 @@
 		  		<hr class="ml-2">
 	  			<div class="list-group mx-auto">
 		  					{% for article in articles %}
-								  <a  class="list-group-item list-group-item-action py-0 px-0 my-1 custom-card-toggle" style="height: 100px">
+								  <a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}" class="list-group-item list-group-item-action py-0 px-0 my-1 custom-card-toggle" style="height: 100px">
 								    <div class="d-flex w-100 justify-content-between">
 								      <img src="{{ article.image.url }}" style="width: 50%; height: 100px">
 								      	<div class="mx-1 px-1 py-1">
@@ -152,7 +152,7 @@
 	  	<div class="row">
 
 
-	  		<div class="col-lg-4 shadow py-3">
+	  		<div class="col-lg-4 shadow py-3 mr-2 custom-category">
 	  			<!--
 	  				List
 	  			-->
@@ -164,7 +164,7 @@
 		  		<hr class="ml-2">
 	  			<div class="list-group mx-auto">
 		  					{% for article in articles %}
-								  <a  class="list-group-item list-group-item-action py-0 px-0 my-1 custom-card-toggle" style="height: 100px">
+								  <a  href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}" class="list-group-item list-group-item-action py-0 px-0 my-1 custom-card-toggle" style="height: 100px">
 								    <div class="d-flex w-100 justify-content-between">
 								      <img src="{{ article.image.url }}" style="width: 50%; height: 100px">
 								      	<div class="mx-1 px-1 py-1">
@@ -186,7 +186,7 @@
 
 
 	  		
-	  		<div class="col-lg-7 shadow mr-2 px-2 py-3 custom-category">
+	  		<div class="custom-category col-lg-7 shadow mr-2 px-2 py-3">
 	  			<div>
 		  			<h4 class="ml-2">
 		  				Campus
@@ -211,7 +211,7 @@
 				                            <p class="card-text custom-category-card-content">{{ articles.first.content }}</p>
 				                        {% endif %}
 			                    	</div>
-				                    <a class="align-self-end btn btn-primary" style="margin-top: auto;">Read</a>
+				                    <a class="align-self-end btn btn-primary" style="margin-top: auto;" href="{% url 'articles' %}{{ "?id=" }}{{ articles.first.id }}">Read</a>
 				                 </div>
 				            </div>
 				          
@@ -229,6 +229,7 @@
 		  				<div class="list-group mx-auto">
 		  					{% for article in articles %}
 								  <a  class="list-group-item list-group-item-action py-0 px-0 my-1 custom-card-toggle" style="height: 100px">
+								  	<input type="hidden" name="href" value="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">
 								    <div class="d-flex w-100 justify-content-between">
 								      <img src="{{ article.image.url }}" style="width: 50%; height: 100px">
 								      	<div class="mx-1 px-1 py-1">
@@ -258,6 +259,7 @@
 
 	  	</div>
 	  </div>
+
 
 
 

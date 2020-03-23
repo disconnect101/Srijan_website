@@ -5,7 +5,9 @@
     <div class="container mt-4">
 
         <div class="row">
-            <div  class="col-lg-8">
+
+
+            <div  class="col-lg-8 custom-article">
                 <div>
                     <div>
                         <h3 class="mb-n1">{{ article.title }}</h3>
@@ -19,7 +21,45 @@
                         {{ article.content }}
                     </div>
                 </div>
+            </div>
 
+
+            <div class="col-lg-4">
+
+                <div class="bg-light py-2 px-2">
+                    <h4 class="text-center">News</h4>
+
+                    <!--
+                        Content here
+                    -->
+
+                    <hr class="mt-n2">
+                </div>
+
+                <div class="mt-2 custom-recent">
+
+                    <h3 class="text-center">Recent</h3>
+                        <div class="list-group mx-auto">
+		  					{% for article in recentarticles %}
+								  <a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}"  class="list-group-item list-group-item-action py-0 px-0 my-1 custom-card-toggle" style="height: 100px">
+
+								    <div class="d-flex w-100 justify-content-between">
+								      <img src="{{ article.image.url }}" style="width: 50%; height: 100px">
+								      	<div class="mx-1 px-1 py-1">
+									      <h5 class="mb-1 text-center custom-list-item-title">{{ article.title }}</h5>
+									      <div class="custom-content-description" style="line-height: 1;font-size: 13px;text-overflow: ellipsis;overflow: hidden;display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;" >
+									      	{% if article.description %}
+									      		{{ article.description }}
+									      	{% else %}
+									      		{{ article.content }}
+									      	{% endif %}
+									      </div>
+								      	</div>
+								    </div>
+								  </a>
+							 {% endfor %}
+						</div>
+                </div>
             </div>
         </div>
 

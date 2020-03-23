@@ -27,6 +27,7 @@ def uploadArticle(request):
 def articles(request):
 	id = request.GET['id']
 	article = Articles.objects.get(id=id)
+	recentarticles = Articles.objects.order_by('-date')[:6]
 	print("this is the title : " + article.title)
 
-	return render(request, 'main/article.html', {'article': article})
+	return render(request, 'main/article.html', {'article': article, 'recentarticles': recentarticles})
