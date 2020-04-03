@@ -6,8 +6,17 @@ from .models import Articles
 
 def home(request):
 	context = {}
-	articles = Articles.objects.all()
-	context['articles'] = articles
+
+	campus_articles = Articles.objects.filter(category__in=['cmp'])
+	career_articles = Articles.objects.filter(category__in=['intd', 'compe', 'als'])
+	sos_articles = Articles.objects.filter(category__in=['sos'])
+	all_articles = Articles.objects.all()
+
+	context['articles'] = all_articles
+	context['career_articles'] = career_articles
+	context['campus_articles'] = campus_articles
+	context['sos_articles'] = sos_articles
+
 	return render(request, 'main/home.html', context)
 
 

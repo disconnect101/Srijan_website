@@ -8,10 +8,21 @@ class Articles(models.Model):
 	content = models.TextField()
 	description = models.TextField(null=True,blank=True)
 
+	"""
+	
+	aritcle categories:
+	 campus: campus
+	 career: intern diaries, alumsays, competetive exams
+	 sound of silence: sound of silence
+	 
+	"""
+
 	CATEGORIES = (
-		('com', 'committees'),
+		('cmp', 'campus'),
 		('intd', 'Intern Diaries'),
 		('als', 'Alumsays'),
+		('compe', 'competetive exams'),
+		('sos', 'sound of silence'),
 	)
 
 	category = models.CharField(max_length=50, choices=CATEGORIES)
