@@ -1,0 +1,75 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div id="page">
+
+		<div id="colorlib-container">
+			<div class="container">
+				<div class="row">
+					<div class="content">
+
+                        <div>
+                            <h2 style="margin-bottom: -0.5em;">Campus Articles</h2>
+                            <hr style="margin-bottom: 3em;">
+                        </div>
+
+                        {% for article in articles %}
+                            <article class="blog-flex">
+                                <a href="#" class="half blog-img" style="background-image: url({{ article.image.url }});"></a>
+                                <div class="half">
+                                    <div class="desc">
+                                        <span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.title }}</a> </span>
+                                        <h2><a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.description }}</a></h2>
+                                        <span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}"><i class="icon-calendar3"></i> {{ article.date }}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by- {{ article.author }}</a></span>
+                                        <p class="first-letra card-text">{{ article.content }}</p>
+                                        <p><a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}" class="btn btn-primary btn-custom">Continue Reading</a></p>
+                                    </div>
+                                </div>
+                                <ul class="share">
+                                    <li class="text-vertical"><i class="icon-share3"></i></li>
+                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
+                                    <li><a href="#"><i class="icon-twitter"></i></a></li>
+                                    <li><a href="#"><i class="icon-googleplus"></i></a></li>
+                                </ul>
+                            </article>
+                        {% endfor %}
+                    </div>
+
+                    <aside class="sidebar">
+				    	{% include 'main/sidebar.html' %}
+                    <aside>
+
+
+				</div>
+			</div>
+		</div>
+
+		{% include 'main/footer.html' %}
+
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="{% static 'main/template_static/js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'main/template_static/js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'main/template_static/js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'main/template_static/js/jquery.waypoints.min.js' %}"></script>
+	<!-- Flexslider -->
+	<script src="{% static 'main/template_static/js/jquery.flexslider-min.js' %}"></script>
+	<!-- Owl carousel -->
+	<script src="{% static 'main/template_static/js/owl.carousel.min.js' %}"></script>
+	<!-- Magnific Popup -->
+	<script src="{% static 'main/template_static/js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'main/template_static/js/magnific-popup-options.js' %}"></script>
+	<!-- Main -->
+	<script src="{% static 'main/template_static/js/main.js' %}"></script>
+
+{% endblock %}

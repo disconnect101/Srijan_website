@@ -20,6 +20,7 @@ def home(request):
 	return render(request, 'main/home.html', context)
 
 
+
 def uploadArticle(request):
 	context = {}
 
@@ -33,6 +34,8 @@ def uploadArticle(request):
 	context['form'] = form
 	return render(request, 'main/upload_article.html', context)
 
+
+
 def articles(request):
 	id = request.GET['id']
 	article = Articles.objects.get(id=id)
@@ -44,3 +47,16 @@ def articles(request):
 	#recentarticles = []
 
 	return render(request, 'main/template_blog.html' , {'article': article, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images })
+
+
+def career(request):
+	articles = Articles.objects.filter(category__in=['intd', 'compe', 'als']).order_by('-date')
+	recentarticles = Articles.objects.order_by('-date')[:6]
+	all_articles_images = Articles.objects.order_by('date')[:8]
+	return render(request, 'main/career.html', {'articles': articles, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images})
+
+def campus(request):
+	articles = Articles.objects.filter(category__in=['cmp']).order_by('-date')
+	recentarticles = Articles.objects.order_by('-date')[:6]
+	all_articles_images = Articles.objects.order_by('date')[:8]
+	return render(request, 'main/campus.html', {'articles': articles, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images})

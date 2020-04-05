@@ -1,0 +1,73 @@
+
+
+
+
+
+
+						<div class="side">
+							<h2 class="sidebar-heading">Subscribe to our newsletter</h2>
+							<div class="row">
+								<div class="col-md-12 col-md-offset-0">
+									Put news here ....
+								</div>
+								<p>
+									<ul class="colorlib-social-icons text-center">
+										<li><a href="#"><i class="icon-twitter"></i></a></li>
+										<li><a href="#"><i class="icon-facebook"></i></a></li>
+										<li><a href="#"><i class="icon-linkedin"></i></a></li>
+										<li><a href="#"><i class="icon-dribbble"></i></a></li>
+									</ul>
+								</p>
+							</div>
+						</div>
+
+						<div class="side-wrap">
+							<h2 class="sidebar-heading">Recent Post</h2>
+
+							{% for article in recentarticles %}
+								<div class="f-entry">
+									<a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}" class="featured-img" style="background-image: url({{ article.image.url }});"></a>
+									<div class="desc">
+										<span><i class="icon-calendar3"></i> {{ article.date }}</span>
+										<h3><a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.description }}</a></h3>
+									</div>
+								</div>
+							{% endfor %}
+
+
+						</div>
+						<div class="side-wrap">
+							<h2 class="sidebar-heading">Categories</h2>
+							<ul class="category">
+								<li><a href="#"><i class="icon-check"></i> Campus</a></li>
+								<li><a href="#"><i class="icon-check"></i> Alumsays</a></li>
+								<li><a href="#"><i class="icon-check"></i> Competetive exams</a></li>
+								<li><a href="#"><i class="icon-check"></i> Intern Diaries</a></li>
+								<li><a href="#"><i class="icon-check"></i> Sound of Silence</a></li>
+							</ul>
+						</div>
+						<div class="side-wrap">
+							<h2 class="sidebar-heading">Video Post</h2>
+							<div class="video colorlib-video" style="background-image: url(images/blog-1.jpg);">
+								<a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-play"></i></a>
+								<div class="overlay"></div>
+							</div>
+						</div>
+
+						<div class="side-wrap">
+							<h2 class="sidebar-heading">Gallery</h2>
+							{% for article_image in all_articles_images %}
+								<a href="{{ article_image.image.url }}" class="gallery image-popup-link text-center" style="background-image: url({{ article_image.image.url }});">
+									<span><i class="icon-search3"></i></span>
+								</a>
+							{% endfor %}
+						</div>
+
+						<div class="side-wrap">
+							<h2 class="sidebar-heading">Blockquote</h2>
+							<blockquote>
+								" Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.
+							</blockquote>
+						</div>
+
+
