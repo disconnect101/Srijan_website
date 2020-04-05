@@ -363,14 +363,14 @@
 				<div class="row">
 					<div class="content" style="margin-top: 40px;">
 						<article class="blog-flex">
-							<a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}" class="half blog-img" style="background-image: url({{ career_articles.first.image.url  }});"></a>
+							<a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}" class="half blog-img" style="background-image: url({{ career_articles.first.image.url  }});"></a>
 							<div class="half">
 								<div class="desc">
-									<span class="category"><a href="blog.html">{{ career_articles.first.description }}</a></span>
+									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}">{{ career_articles.first.description }}</a></span>
 									<h2><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}">The Most Popular Leg Workout for Women</a></h2>
-									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}"><i class="icon-calendar3"></i> {{ career_articles.first.date }}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by- {{ career_articles.first.author }}</a>
+									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}"><i class="icon-calendar3"></i> {{ career_articles.first.date }}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by- {{ career_articles.first.author }}</a>
 									<p class="first-letra card-text">{{ career_articles.first.content }}</p>
-									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}" class="btn btn-primary btn-custom">Continue Reading</a></p>
+									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}" class="btn btn-primary btn-custom">Continue Reading</a></p>
 								</div>
 							</div>
 							<ul class="share">
@@ -465,14 +465,14 @@
 				<div class="row">
 					<div class="content" style="margin-top: 40px;">
 						<article class="blog-flex">
-							<a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}" class="half blog-img" style="background-image: url({{ campus_articles.first.image.url  }});"></a>
+							<a href="{% url 'articles' %}{{ "?id=" }}{{ campus_articles.first.id }}" class="half blog-img" style="background-image: url({{ campus_articles.first.image.url  }});"></a>
 							<div class="half">
 								<div class="desc">
 									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}">{{ campus_articles.first.description }}</a></span>
 									<h2><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}">The Most Popular Leg Workout for Women</a></h2>
 									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}"><i class="icon-calendar3"></i> {{ campus_articles.first.date }}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by- {{ campus_articles.first.author }}</a>
 									<p class="first-letra card-text">{{ campus_articles.first.content }}</p>
-									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}" class="btn btn-primary btn-custom">Continue Reading</a></p>
+									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ campus_articles.first.id }}" class="btn btn-primary btn-custom">Continue Reading</a></p>
 								</div>
 							</div>
 							<ul class="share">

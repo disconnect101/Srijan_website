@@ -7,8 +7,8 @@ from .models import Articles
 def home(request):
 	context = {}
 
-	campus_articles = Articles.objects.filter(category__in=['cmp'])[:4]
-	career_articles = Articles.objects.filter(category__in=['intd', 'compe', 'als'])[:4]
+	campus_articles = Articles.objects.filter(category__in=['cmp'])
+	career_articles = Articles.objects.filter(category__in=['intd', 'compe', 'als'])
 	sos_articles = Articles.objects.filter(category__in=['sos'])
 	all_articles = Articles.objects.all()
 
