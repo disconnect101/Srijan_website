@@ -7,8 +7,8 @@ from .models import Articles
 def home(request):
 	context = {}
 
-	campus_articles = Articles.objects.filter(category__in=['cmp'])
-	career_articles = Articles.objects.filter(category__in=['intd', 'compe', 'als'])
+	campus_articles = Articles.objects.filter(category__in=['cmp'])[:4]
+	career_articles = Articles.objects.filter(category__in=['intd', 'compe', 'als'])[:4]
 	sos_articles = Articles.objects.filter(category__in=['sos'])
 	all_articles = Articles.objects.all()
 
@@ -37,6 +37,10 @@ def articles(request):
 	id = request.GET['id']
 	article = Articles.objects.get(id=id)
 	recentarticles = Articles.objects.order_by('-date')[:6]
-	print("this is the title : " + article.title)
+	all_articles_images = Articles.objects.order_by('date')[:8]
 
-	return render(request, 'main/article.html', {'article': article, 'recentarticles': recentarticles})
+	print("this is the title : " + article.title)
+	#article = []
+	#recentarticles = []
+
+	return render(request, 'main/template_blog.html' , {'article': article, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images })

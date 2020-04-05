@@ -18,7 +18,9 @@
                     <img src="{{ article.image.url }}" class="img-fluid">
 
                     <div class="mt-4">
+                        {% autoescape off %}
                         {{ article.content }}
+                        {% endautoescape %}
                     </div>
                 </div>
             </div>

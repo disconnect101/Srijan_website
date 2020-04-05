@@ -1,0 +1,66 @@
+{% load static %}
+<div class="row" style="background-image: url({% static 'main/bookt.png' %}); ">  <!-- url({% static 'main/bookt.png' %}); -->
+	  <div class="col col-lg-3 my-5">
+	  	<img src="{% static 'main/logo.png' %}" style="height: 150px;width: 130px;float:right;padding: 10px;">
+	  </div>
+	  	<div class="col col-lg-6 text-center my-5" >
+	    		<h1 class="page-header mb-0" style="font-family: serif;font-size:100px;">
+	    			Srijan
+	    			<br>
+	    		</h1>
+	    		<span style="font-size: 20px">Motilal Nehru National Institue of Technology, Prayagraj</span>
+	    </div>
+	   
+	 </div>
+	  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+	    <div class="container">
+		    <a class="navbar-brand" href="#">Navbar</a>
+		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+		      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">About Us</a>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Campus
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		          <a class="dropdown-item" href="#">Committees</a>
+		        </div>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Career
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		          <a class="dropdown-item" href="#">Intern Diaries</a>
+		          <a class="dropdown-item" href="#">Alumsays</a>
+		          <div class="dropdown-divider"></div>
+		          <a class="dropdown-item" href="#">Something else here</a>
+		        </div>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Sound Of Silence</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Publications</a>
+		      </li>
+		    </ul>
+		    <form class="form-inline my-2 my-lg-0">
+		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		    </form>
+		  </div>
+
+
+		</div>
+	  </nav>
