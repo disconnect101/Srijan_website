@@ -89,7 +89,7 @@
 						</div>
 						<div class="col-xs-10 text-right menu-1">
 							<ul>
-								<li><a href="index.html">Home</a></li>
+								<li><a href="/home">Home</a></li>
 								<li class="has-dropdown active">
 									<a href="/career">Career</a>
 									<ul class="dropdown">
@@ -118,6 +118,7 @@
 					<div class="content">
 						<article class="blog-entry">
 							<div class="blog-wrap">
+                                <div type="hidden" id="article-id">{{ article.id }}</div>
 								<span class="category text-center">{{ article.title }}</span>
 								<h2 class="text-center"><a href="blog.html">{{ article.description }}</a></h2>
 								<div class="blog-image">
@@ -136,7 +137,7 @@
 							</div>
 							<div class="desc">
                                 {% autoescape off %}
-								{{ article.content }}
+								    {{ article.content }}
                                 {% endautoescape %}
 							</div>
 					
@@ -144,22 +145,21 @@
 
 
 						<div class="comment-box">
-							<h2 class="colorlib-heading-2">3 Comments</h2>
+                            <h2 class="colorlib-heading-2" style="margin-bottom: -0.6em;">Comments</h2><hr>
+                            {% for comment in comments %}
+                                <div class="comment-post"><div class='row'>
 
+                                <div class="col col-lg-8"><h1> {{ comment.firstname }} {{ data.lastname }} </h1></div><small class="col col-lg-4" style='text-align: right;margin: auto'> {{ comment.date }}</small>
+                                </div><p> {{ comment.comment }}</p>
 
-							<div class="comment-post">
-								
-									<h3>Stephen Brent <span>Commented 5 days ago</span></h3>
-									<p>A small river named Duden flows by their place and supplies. Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
-								
-							</div>
-							
+                                </div>
+							{% endfor %}
 
 							
 						</div>
 						<div class="comment-area">
 							<h2 class="colorlib-heading-2">Leave a comment</h2>
-							<form action="#">
+                                {% csrf_token %}
 								<div class="row form-group">
 									<div class="col-md-6">
 										<!-- <label for="fname">First Name</label> -->
@@ -178,10 +178,10 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<input type="submit" value="Post Comment" class="btn btn-primary">
+                                    <button value="Post Comment" class="btn btn-primary" id="comment-button">Post Comment</button>
 								</div>
 
-							</form>	
+
 						</div>
 						
 						
@@ -374,6 +374,8 @@
 	<script src="{% static 'main/template_static/js/magnific-popup-options.js' %}"></script>
 	<!-- Main -->
 	<script src="{% static 'main/template_static/js/main.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'main/ajax.js' %}"></script>
 
 	</body>
 </html>

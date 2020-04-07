@@ -32,3 +32,13 @@ class Articles(models.Model):
 	def __str__(self):
 		return self.title
 
+class Comment(models.Model):
+	article_id = models.IntegerField()
+	firstname = models.CharField(max_length=50)
+	lastname = models.CharField(max_length=50)
+	comment = models.TextField()
+	date = models.DateTimeField(default=timezone.now)
+
+	def __str__(self):
+		return self.firstname
+

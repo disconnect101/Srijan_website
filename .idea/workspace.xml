@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3a72d0d9-9e76-46a5-908e-ee5f876c93bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/main/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/main/template_blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/template_blog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
@@ -23,6 +23,7 @@
       <list>
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -41,7 +42,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../helloworld" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -98,7 +99,11 @@
       <workItem from="1585915630858" duration="6021000" />
       <workItem from="1586011863675" duration="7663000" />
       <workItem from="1586068802264" duration="4222000" />
-      <workItem from="1586111740252" duration="4244000" />
+      <workItem from="1586111740252" duration="4843000" />
+      <workItem from="1586186030667" duration="2876000" />
+      <workItem from="1586220218046" duration="638000" />
+      <workItem from="1586221115395" duration="4530000" />
+      <workItem from="1586225866478" duration="3749000" />
     </task>
     <servers />
   </component>
@@ -110,33 +115,33 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="587" y="214" width="800" height="679" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1584351570118" />
-    <state x="770" y="297" width="424" height="515" key="FileChooserDialogImpl" timestamp="1585916791684">
+    <state x="770" y="297" width="424" height="515" key="FileChooserDialogImpl" timestamp="1586225880788">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="770" y="297" width="424" height="515" key="FileChooserDialogImpl/65.25.1855.1055@65.25.1855.1055" timestamp="1585916791684" />
-    <state width="1809" height="278" key="GridCell.Tab.0.bottom" timestamp="1584553791867">
+    <state x="770" y="297" width="424" height="515" key="FileChooserDialogImpl/65.25.1855.1055@65.25.1855.1055" timestamp="1586225880788" />
+    <state width="1809" height="278" key="GridCell.Tab.0.bottom" timestamp="1586229146472">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="278" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1584553791867" />
-    <state width="1809" height="278" key="GridCell.Tab.0.center" timestamp="1584553791867">
+    <state width="1809" height="278" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1586229146472" />
+    <state width="1809" height="278" key="GridCell.Tab.0.center" timestamp="1586229146468">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="278" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1584553791867" />
-    <state width="1809" height="278" key="GridCell.Tab.0.left" timestamp="1584553791866">
+    <state width="1809" height="278" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1586229146468" />
+    <state width="1809" height="278" key="GridCell.Tab.0.left" timestamp="1586229146465">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="278" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1584553791866" />
-    <state width="1809" height="278" key="GridCell.Tab.0.right" timestamp="1584553791867">
+    <state width="1809" height="278" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1586229146465" />
+    <state width="1809" height="278" key="GridCell.Tab.0.right" timestamp="1586229146470">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="278" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1584553791867" />
+    <state width="1809" height="278" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1586229146470" />
     <state x="481" y="187" width="1022" height="732" key="SettingsEditor" timestamp="1584186710812">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="481" y="187" width="1022" height="732" key="SettingsEditor/65.25.1855.1055@65.25.1855.1055" timestamp="1584186710812" />
-    <state x="648" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1586111767062">
+    <state x="648" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1586225867928">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="648" y="380" key="com.intellij.ide.util.TipDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1586111767062" />
+    <state x="648" y="380" key="com.intellij.ide.util.TipDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1586225867928" />
   </component>
 </project>

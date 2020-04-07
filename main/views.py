@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-from .forms import ArticleForm
-from .models import Articles
+from .forms import ArticleForm, CommentForm
+from .models import Articles, Comment
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -38,6 +39,7 @@ def uploadArticle(request):
 
 def articles(request):
 	id = request.GET['id']
+	comments = Comment.objects.filter(article_id=id)
 	article = Articles.objects.get(id=id)
 	recentarticles = Articles.objects.order_by('-date')[:6]
 	all_articles_images = Articles.objects.order_by('date')[:8]
@@ -46,7 +48,7 @@ def articles(request):
 	#article = []
 	#recentarticles = []
 
-	return render(request, 'main/template_blog.html' , {'article': article, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images })
+	return render(request, 'main/template_blog.html' , {'article': article, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images, 'comments': comments })
 
 
 def career(request):
@@ -60,3 +62,12 @@ def campus(request):
 	recentarticles = Articles.objects.order_by('-date')[:6]
 	all_articles_images = Articles.objects.order_by('date')[:8]
 	return render(request, 'main/campus.html', {'articles': articles, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images})
+
+def comment(request):
+	if request.method == 'POST':
+		form = CommentForm(request.POST)
+		ajaxresponse = request.POST
+		if form.is_valid():
+			form.save()
+			return JsonResponse(ajaxresponse)
+

@@ -22,7 +22,7 @@ from main.views import uploadArticle
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include('main.urls')),
-    path('upload/', uploadArticle),
+    path('article/', include('main.urls')),
     path('career/', include('main.urls')),
     path('campus/', include('main.urls')),
     path('', include('main.urls')),
