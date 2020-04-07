@@ -1,7 +1,7 @@
 $('#comment-button').on('click', function () {
 
     var comment = {
-        article_id: $('#article-id').text(),
+        article_id: $('#article-id').val(),
         firstname: $('#fname').val(),
         lastname: $('#lname').val(),
         comment: $('#message').val(),
