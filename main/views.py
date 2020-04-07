@@ -39,7 +39,7 @@ def uploadArticle(request):
 
 def articles(request):
 	id = request.GET['id']
-	comments = Comment.objects.filter(article_id=id)
+	comments = Comment.objects.filter(article_id=id).order_by('-date')
 	article = Articles.objects.get(id=id)
 	recentarticles = Articles.objects.order_by('-date')[:6]
 	all_articles_images = Articles.objects.order_by('date')[:8]
