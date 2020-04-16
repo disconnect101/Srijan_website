@@ -46,5 +46,17 @@ class ArticleImages(models.Model):
 	article_id = models.ForeignKey(Articles, on_delete=models.CASCADE)
 	image = models.ImageField(upload_to='images/', null=True, blank=True)
 
+class Publications(models.Model):
+	title = models.CharField(max_length=500)
+	author = models.CharField(max_length=50)
+	description = models.TextField()
+	cover_image = models.ImageField(upload_to='images/', null=True, blank=True)
+	file = models.FileField(upload_to='publications/')
+
+	def __str__(self):
+		return self.title
+
+
+
 
 

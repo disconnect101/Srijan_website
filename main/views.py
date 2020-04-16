@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import ArticleForm, CommentForm
-from .models import Articles, Comment, ArticleImages
+from .models import Articles, Comment, ArticleImages, Publications
 from django.http import JsonResponse
 
 # Create your views here.
@@ -82,6 +82,17 @@ def sos(request):
 	recentarticles = Articles.objects.order_by('-date')[:6]
 	all_articles_images = Articles.objects.order_by('date')[:8]
 	return render(request, 'main/sos.html', {'articles': articles, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images})
+
+def publication(request):
+	publications = Publications.objects.all()
+	recentarticles = Articles.objects.order_by('-date')[:6]
+	all_articles_images = Articles.objects.order_by('date')[:8]
+	return render(request, 'main/publications.html', {'publications': publications, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images})
+
+def viewPublication(request):
+	id = request.GET['id']
+	publication = Publications.objects.get(id=id)
+	return render(request, 'main/viewpub.html', {'publication': publication})
 
 def comment(request):
 	if request.method == 'POST':

@@ -8,4 +8,5 @@ class ArticlesAdmin(admin.ModelAdmin):
 admin.site.register(Articles)
 admin.site.register(Comment)
 admin.site.register(ArticleImages)
+admin.site.register(Publications)
 

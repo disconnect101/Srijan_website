@@ -8,6 +8,8 @@ urlpatterns = [
 		path('comment/', views.comment, name='comment'),
 		path('career_all/', views.career, name='career'),
 		path('campus_all/', views.campus, name='campus'),
-		path('sos_all/', views.sos, name='campus'),
+		path('sos_all/', views.sos, name='sos'),
+		path('show_pub/', views.publication, name='publications'),
+		path('view_pub/', views.viewPublication, name='view_publication'),
 		path('comment_upload/', views.comment, name='comment_upload')
 ]
