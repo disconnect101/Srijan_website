@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import ArticleForm, CommentForm
-from .models import Articles, Comment
+from .models import Articles, Comment, ArticleImages
 from django.http import JsonResponse
 
 # Create your views here.
@@ -8,9 +8,9 @@ from django.http import JsonResponse
 def home(request):
 	context = {}
 
-	campus_articles = Articles.objects.filter(category__in=['cmp']).order_by('-date')
-	career_articles = Articles.objects.filter(category__in=['intd', 'compe', 'als']).order_by('-date')
-	sos_articles = Articles.objects.filter(category__in=['sos']).order_by('-date')
+	campus_articles = Articles.objects.filter(category__in=['cmp']).order_by('-date')[:5]
+	career_articles = Articles.objects.filter(category__in=['intd', 'compe', 'als']).order_by('-date')[:5]
+	sos_articles = Articles.objects.filter(category__in=['sos']).order_by('-date')[:5]
 	all_articles = Articles.objects.all()[:8]
 
 	context['articles'] = all_articles
@@ -41,6 +41,7 @@ def articles(request):
 	id = request.GET['id']
 	comments = Comment.objects.filter(article_id=id).order_by('-date')
 	article = Articles.objects.get(id=id)
+	article_images = ArticleImages.objects.filter(article_id=id)
 	recentarticles = Articles.objects.order_by('-date')[:6]
 	all_articles_images = Articles.objects.order_by('date')[:8]
 
@@ -48,7 +49,7 @@ def articles(request):
 	#article = []
 	#recentarticles = []
 
-	return render(request, 'main/template_blog.html' , {'article': article, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images, 'comments': comments })
+	return render(request, 'main/template_blog.html' , {'article': article, 'article_images': article_images, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images, 'comments': comments })
 
 
 def career(request):

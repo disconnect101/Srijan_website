@@ -33,7 +33,7 @@ class Articles(models.Model):
 		return self.title
 
 class Comment(models.Model):
-	article_id = models.IntegerField()
+	article_id = models.ForeignKey(Articles, on_delete=models.CASCADE)
 	firstname = models.CharField(max_length=50)
 	lastname = models.CharField(max_length=50)
 	comment = models.TextField()
@@ -41,4 +41,10 @@ class Comment(models.Model):
 
 	def __str__(self):
 		return self.firstname
+
+class ArticleImages(models.Model):
+	article_id = models.ForeignKey(Articles, on_delete=models.CASCADE)
+	image = models.ImageField(upload_to='images/', null=True, blank=True)
+
+
 

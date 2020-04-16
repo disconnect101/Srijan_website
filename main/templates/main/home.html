@@ -389,7 +389,7 @@
 						
 						<div class="side-wrap">
 							<h2 class="sidebar-heading">More Posts</h2>
-                                {% for article in career_articles %}
+                            {% for article in career_articles %}
                                 {% if article.id is not career_articles.first.id %}
 
                                     <div class="f-entry">
@@ -401,6 +401,9 @@
                                     </div>
                                 {% endif %}
                             {% endfor %}
+                            <div class="col-lg-12" style="text-align: right;s">
+                            	<a href="/career/career_all/?type=all" style="color: orange;ali">more articles...</a>
+                        	</div>
 							
 						</div>
 					</aside>
@@ -503,7 +506,9 @@
                                     </div>
                                 {% endif %}
                             {% endfor %}
-							
+							<div class="col-lg-12" style="text-align: right;s">
+                            	<a href="/career/campus_all/" style="color: orange;ali">more articles...</a>
+                        	</div>
 						</div>
 					</aside>
 				</div>
@@ -517,9 +522,9 @@
 			<div id="colorlib-container">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-6" style="margin: 1em;">
 							<!--<img class="img-responsive" src="/static/main/sos.jpg" alt="">-->
-							<img class="img-responsive" src="{{ sos_articles.first.image.url }}" alt="">
+							<img class="img-responsive" src="{{ sos_articles.first.image.url }}" alt="" >
 						</div>
 						<div>
 							<h2 style="margin-bottom: -0.6em;">
@@ -536,14 +541,19 @@
 							<p class="first-letra">Far far away, <strong><a href="#">behind the word mountains</a></strong>, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>\
 						-->
 							{{ sos_articles.first.content }}
-							<p>
-								<ul class="colorlib-social-icons">
-									<li><a href="#"><i class="icon-twitter"></i></a></li>
-									<li><a href="#"><i class="icon-facebook"></i></a></li>
-									<li><a href="#"><i class="icon-linkedin"></i></a></li>
-									<li><a href="#"><i class="icon-dribbble"></i></a></li>
-								</ul>
-							</p>
+							<div class="row">
+								<div class="col-lg-6">
+									<ul class="colorlib-social-icons">
+										<li><a href="#"><i class="icon-twitter"></i></a></li>
+										<li><a href="#"><i class="icon-facebook"></i></a></li>
+										<li><a href="#"><i class="icon-linkedin"></i></a></li>
+										<li><a href="#"><i class="icon-dribbble"></i></a></li>
+									</ul>
+								</div>
+								<div class="col-lg-6" style="text-align: right;">
+	                            	<a href="/sos/sos_all/" style="color: orange;ali">more articles...</a>
+	                        	</div>
+	                        </div>
 						</div>
 					</div>
 				</div>

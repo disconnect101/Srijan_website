@@ -14,7 +14,7 @@
 						<article class="blog-entry">
 							<div class="blog-wrap">
                                 <input type="hidden" id="article-id" value="{{ article.id }}">
-								<span class="category text-center">{{ article.title }}</span>
+								<span class="category text-center">{{ article.title }} #{{ article.id }}</span>
 								<h2 class="text-center"><a href="blog.html">{{ article.description }}</a></h2>
 								<div class="blog-image">
 									<div class="owl-carousel owl-carousel2 blog-item">
@@ -22,11 +22,17 @@
 											<a href="#" class="blog image-popup-link" style="background-image: url({{ article.image.url  }});">
 											</a>
 										</div>
-										<div class="item">
-											<a href="#" class="blog image-popup-link" style="background-image: url('/media/images/images/blog-2.jpg');">
-											</a>
-										</div>
+                                        {% for article_image in article_images %}
+                                            <div class="item">
+											<a href="#" class="blog image-popup-link" style="background-image: url({{ article_image.image.url }});">
+											    </a>
+										    </div>
+                                        {% endfor %}
 									</div>
+                                    {% if not article_images.exists %}
+                                        <a href="#" class="blog image-popup-link" style="background-image: url({{ article.image.url  }}); margin-bottom: 2em;">
+											</a>
+                                    {% endif %}
 								</div>
 								<span class="category text-center"><a href="blog.html" class="posted-by"><i class="icon-user2"></i> by - {{ article.author }}</a> | <a href="blog.html"><i class="icon-calendar3"></i> {{ article.date }}</a></span>
 							</div>
