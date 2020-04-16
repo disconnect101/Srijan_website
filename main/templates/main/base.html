@@ -75,22 +75,69 @@
 
 
 
+	<style>
+		.dropbtn {
+		  
+		  color: white;
+		  padding: 16px;
+		  font-size: 16px;
+		  border: none;
+		  cursor: pointer;
+		}
+
+		.dropbtn:hover, .dropbtn:focus {
+		  background-color: #2980B9;
+		}
+
+		.dropdown {
+		  z-index: 2;
+		  position: relative;
+		  display: inline-block;
+		}
+
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #f1f1f1;
+		  min-width: 160px;
+		  overflow: auto;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+
+		.dropdown-content a {
+		  color: black;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		}
+
+		.dropdown a:hover {background-color: #ddd;}
+
+		.show {display: block;}
+	</style>
 
   </head>
+
   <body>
-   <div class="row" >  <!-- url({% static 'main/bookt.png' %}); -->
-	  <div class="col col-lg-3 my-5">
-	  	<img src="{% static 'main/logo.png' %}" style="height: 150px;width: 130px;float:right;padding: 10px;">
-	  </div>
-	  	<div class="col col-lg-6 text-center my-5" >
-	    		<h1 class="page-header mb-0" style="font-family: serif;font-size:100px;">
-	    			Srijan
-	    			<br>
-	    		</h1>
-	    		<span style="font-size: 20px">Motilal Nehru National Institue of Technology, Prayagraj</span>
-	    </div>
-	   
-	 </div>
+
+  	<div class="container">
+	   <div class="row" >  <!-- url({% static 'main/bookt.png' %}); -->
+		  <div class="col col-lg-3 my-5 text-center">
+		  	<img src="{% static 'main/logo.png' %}" style="height: 150px;width: 130px;padding: 10px;margin: 30px auto;">
+		  </div>
+		  <div class="col col-lg-6 text-center my-5" >
+		    		<h1 class="page-header mb-0" style="font-family: serif;font-size:100px;">
+		    			Srijan
+		    			<br>
+		    		</h1>
+		    		<span style="font-size: 20px">Motilal Nehru National Institue of Technology, Prayagraj</span>
+		  </div>
+		 
+		   
+	   </div>
+	</div>
+
 
 	  <nav class="container colorlib-nav" role="navigation">
 			<div class="top-menu ">
@@ -102,16 +149,16 @@
 						<div class="col-lg-10 menu-1  text-right">
 							<ul>
 								<li><a href="/home">Home</a></li>
-								<li class="has-dropdown active">
-									<a href="/career/career_all" >Career</a>
-									<ul class="dropdown">
-										<li class="dropdown-item"><a href="#">Inter Diaries</a></li>
-										<li class="dropdown-item"><a href="#">AlumSays</a></li>
-										<li class="dropdown-item"><a href="#">Competetive Exams</a></li>		
+								<li class="dropdown active">
+									<a href="/career/career_all/?type=all" class="dropbtn">Career</a>
+									<ul id="myDropdown" class="file_menu dropdown-content">
+										<li><a href="/career/career_all/?type=intd">Inter Diaries</a></li>
+										<li><a href="/career/career_all/?type=als">AlumSays</a></li>
+										<li><a href="/career/career_all/?type=compe">Competetive Exams</a></li>
 									</ul>
 								</li>
 								<li><a href="/campus/campus_all">Campus</a></li>
-								<li><a href="/sos">Sound of Silence</a></li>
+								<li><a href="/sos/sos_all">Sound of Silence</a></li>
 								<li><a href="/publications">Publications</a></li>
 								<li><a href="/about">About Us</a></li>
 							</ul>
@@ -120,6 +167,8 @@
 				</div>
 			</div>
 		</nav>
+
+		
 
 
 
@@ -156,6 +205,27 @@
 	<script src="{% static 'main/template_static/js/magnific-popup-options.js' %}"></script>
 	<!-- Main -->
 	<script src="{% static 'main/template_static/js/main.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'main/ajax.js' %}"></script>
+
+	<script>
+			// Close the dropdown if the user clicks outside of it
+			window.onclick = function(event) {
+			  if (!event.target.matches('.dropbtn')) {
+			  	console.log('clicked');
+			  	$('ul.file_menu').stop(true, true).slideUp('medium');
+			    
+			  }
+			}
+
+			$(document).ready(function() {
+			    $(".dropdown").hover(
+			        function() {
+			            $('ul.file_menu').stop(true, true).slideDown('medium');
+			        }
+			    );
+			});
+		</script>
 
   </body>
 </html>

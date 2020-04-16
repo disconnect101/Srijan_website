@@ -11,7 +11,7 @@ def home(request):
 	campus_articles = Articles.objects.filter(category__in=['cmp']).order_by('-date')
 	career_articles = Articles.objects.filter(category__in=['intd', 'compe', 'als']).order_by('-date')
 	sos_articles = Articles.objects.filter(category__in=['sos']).order_by('-date')
-	all_articles = Articles.objects.all()
+	all_articles = Articles.objects.all()[:8]
 
 	context['articles'] = all_articles
 	context['career_articles'] = career_articles
@@ -52,16 +52,35 @@ def articles(request):
 
 
 def career(request):
-	articles = Articles.objects.filter(category__in=['intd', 'compe', 'als']).order_by('-date')
+	type = ''
+	if request.GET['type']=='intd':
+		articles = Articles.objects.filter(category__in=['intd']).order_by('-date')
+		type = 'Intern Diaries'
+	elif request.GET['type']=='als':
+		articles = Articles.objects.filter(category__in=['als']).order_by('-date')
+		type = 'AlumSays'
+	elif request.GET['type']=='compe':
+		articles = Articles.objects.filter(category__in=['compe']).order_by('-date')
+		type = 'Competitive Exams'
+	else:
+		articles = Articles.objects.filter(category__in=['intd', 'compe', 'als']).order_by('-date')
+		type = 'Career Articles'
+
 	recentarticles = Articles.objects.order_by('-date')[:6]
 	all_articles_images = Articles.objects.order_by('date')[:8]
-	return render(request, 'main/career.html', {'articles': articles, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images})
+	return render(request, 'main/career.html', {'articles': articles, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images, 'type': type})
 
 def campus(request):
 	articles = Articles.objects.filter(category__in=['cmp']).order_by('-date')
 	recentarticles = Articles.objects.order_by('-date')[:6]
 	all_articles_images = Articles.objects.order_by('date')[:8]
 	return render(request, 'main/campus.html', {'articles': articles, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images})
+
+def sos(request):
+	articles = Articles.objects.filter(category__in=['sos']).order_by('-date')
+	recentarticles = Articles.objects.order_by('-date')[:6]
+	all_articles_images = Articles.objects.order_by('date')[:8]
+	return render(request, 'main/sos.html', {'articles': articles, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images})
 
 def comment(request):
 	if request.method == 'POST':

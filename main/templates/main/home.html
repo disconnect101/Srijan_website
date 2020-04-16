@@ -369,7 +369,7 @@
 									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}">{{ career_articles.first.title }}</a></span>
 									<h2><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}">{{ career_articles.first.description }}</a></h2>
 									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}"><i class="icon-calendar3"></i> {{ career_articles.first.date }}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by- {{ career_articles.first.author }}</a>
-									<p class="first-letra card-text">{% autoescape off %}{{ career_articles.first.content }}{% endautoescape %}</p>
+									<p class="first-letra card-text">{% autoescape off %}{{ career_articles.first.content|truncatewords:50 }}{% endautoescape %}</p>
 									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}" class="btn btn-primary btn-custom">Continue Reading</a></p>
 								</div>
 							</div>
@@ -471,7 +471,7 @@
 									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}">{{ campus_articles.first.title }}</a></span>
 									<h2><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}">{{ campus_articles.first.description }}</a></h2>
 									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}"><i class="icon-calendar3"></i> {{ campus_articles.first.date }}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by- {{ campus_articles.first.author }}</a>
-									<p class="first-letra card-text">{% autoescape off %}{{ campus_articles.first.content }}{% endautoescape %}</p>
+									<p class="first-letra card-text">{% autoescape off %}{{ campus_articles.first.content|truncatewords:50 }}{% endautoescape %}</p>
 									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ campus_articles.first.id }}" class="btn btn-primary btn-custom">Continue Reading</a></p>
 								</div>
 							</div>
@@ -512,32 +512,42 @@
 		</section>	
 
 		<section class="jumbotron">
-			<h1 class="text-center">Sound of Silence</h1>
-			<hr>
-		<div id="colorlib-container">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<img class="img-responsive" src="/static/main/sos.jpg" alt="">
-					</div>
-					<div class="col-md-6">
-						<p>Hi! My Name is <strong>Steph</strong> Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-						<blockquote>
-							A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-						</blockquote>
-						<p class="first-letra">Far far away, <strong><a href="#">behind the word mountains</a></strong>, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-						<p>
-							<ul class="colorlib-social-icons">
-								<li><a href="#"><i class="icon-twitter"></i></a></li>
-								<li><a href="#"><i class="icon-facebook"></i></a></li>
-								<li><a href="#"><i class="icon-linkedin"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble"></i></a></li>
-							</ul>
-						</p>
+				<h1 class="text-center">Sound of Silence</h1>
+				<hr>
+			<div id="colorlib-container">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<!--<img class="img-responsive" src="/static/main/sos.jpg" alt="">-->
+							<img class="img-responsive" src="{{ sos_articles.first.image.url }}" alt="">
+						</div>
+						<div>
+							<h2 style="margin-bottom: -0.6em;">
+								{{ sos_articles.first.title }}
+							</h2>
+							<hr style="border: 0;           
+										  background-color: blue;
+										  height: 1px;">
+						<!--
+							<p>Hi! My Name is <strong>Steph</strong> Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+							<blockquote>
+								A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+							</blockquote>
+							<p class="first-letra">Far far away, <strong><a href="#">behind the word mountains</a></strong>, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>\
+						-->
+							{{ sos_articles.first.content }}
+							<p>
+								<ul class="colorlib-social-icons">
+									<li><a href="#"><i class="icon-twitter"></i></a></li>
+									<li><a href="#"><i class="icon-facebook"></i></a></li>
+									<li><a href="#"><i class="icon-linkedin"></i></a></li>
+									<li><a href="#"><i class="icon-dribbble"></i></a></li>
+								</ul>
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 			
 		</section>
 	</div>

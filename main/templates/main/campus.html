@@ -21,9 +21,9 @@
                                 <div class="half">
                                     <div class="desc">
                                         <span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.title }}</a> </span>
-                                        <h2><a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.description }}</a></h2>
+                                        <h2><a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.description|truncatewords:20 }}</a></h2>
                                         <span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}"><i class="icon-calendar3"></i> {{ article.date }}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by- {{ article.author }}</a></span>
-                                        <p class="first-letra card-text">{{ article.content }}</p>
+                                        <p class="first-letra card-text">{% autoescape off %}{{ article.content|truncatewords:50 }}{% endautoescape %}</p>
                                         <p><a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}" class="btn btn-primary btn-custom">Continue Reading</a></p>
                                     </div>
                                 </div>
