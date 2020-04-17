@@ -370,7 +370,7 @@
 									<h2><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}">{{ career_articles.first.description }}</a></h2>
 									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}"><i class="icon-calendar3"></i> {{ career_articles.first.date }}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by- {{ career_articles.first.author }}</a>
 									<p class="first-letra card-text">{% autoescape off %}{{ career_articles.first.content|truncatewords:50 }}{% endautoescape %}</p>
-									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}" class="btn btn-primary btn-custom">Continue Reading</a></p>
+									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}" class="btn btn-primary btn-custom" style="color: white">Continue Reading</a></p>
 								</div>
 							</div>
 							<ul class="share">
@@ -480,7 +480,7 @@
 									<h2><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}">{{ campus_articles.first.description }}</a></h2>
 									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}"><i class="icon-calendar3"></i> {{ campus_articles.first.date }}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by- {{ campus_articles.first.author }}</a>
 									<p class="first-letra card-text">{% autoescape off %}{{ campus_articles.first.content|truncatewords:50 }}{% endautoescape %}</p>
-									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ campus_articles.first.id }}" class="btn btn-primary btn-custom">Continue Reading</a></p>
+									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ campus_articles.first.id }}" class="btn btn-primary btn-custom" style="color: white">Continue Reading</a></p>
 								</div>
 							</div>
 							<ul class="share">
