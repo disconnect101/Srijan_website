@@ -424,15 +424,15 @@
 							<div class="container">
 								<div class="row">
 									<div class="col-md-6">
-										<img class="img-responsive" src="/static/main/publication.jpg" alt="">
+										<img class="img-responsive" src="{{ publications.first.cover_image.url }}" alt="">
 									</div>
 									<div class="col-md-6">
-										<p>Hi! My Name is <strong>Steph</strong> Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-										<blockquote>
-											A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-										</blockquote>
-										<p class="first-letra">Far far away, <strong><a href="#">behind the word mountains</a></strong>, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-										<div class="row">
+										<h2 style="margin-bottom: -0.4em;">
+                                            {{ publications.first.title }}
+                                        </h2>
+                                        <hr style="border: 0; background-color: darkslategrey; height: 1px;">
+                                        {{ publications.first.description }}
+                                            <div class="row">
 											<div class="col-lg-6">
 												<ul class="colorlib-social-icons">
 													<li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -535,9 +535,7 @@
 							<h2 style="margin-bottom: -0.6em;">
 								{{ sos_articles.first.title }}
 							</h2>
-							<hr style="border: 0;           
-										  background-color: blue;
-										  height: 1px;">
+							<hr style="border: 0; background-color: darkslategrey; height: 1px;">
 						<!--
 							<p>Hi! My Name is <strong>Steph</strong> Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
 							<blockquote>

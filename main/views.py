@@ -11,12 +11,14 @@ def home(request):
 	campus_articles = Articles.objects.filter(category__in=['cmp']).order_by('-date')[:5]
 	career_articles = Articles.objects.filter(category__in=['intd', 'compe', 'als']).order_by('-date')[:5]
 	sos_articles = Articles.objects.filter(category__in=['sos']).order_by('-date')[:5]
+	publications = Publications.objects.all().order_by('-date')
 	all_articles = Articles.objects.all()[:8]
 
 	context['articles'] = all_articles
 	context['career_articles'] = career_articles
 	context['campus_articles'] = campus_articles
 	context['sos_articles'] = sos_articles
+	context['publications'] = publications
 
 	return render(request, 'main/home.html', context)
 

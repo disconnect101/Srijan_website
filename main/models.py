@@ -52,6 +52,7 @@ class Publications(models.Model):
 	description = models.TextField()
 	cover_image = models.ImageField(upload_to='images/', null=True, blank=True)
 	file = models.FileField(upload_to='publications/')
+	date = models.DateTimeField(default=timezone.now)
 
 	def __str__(self):
 		return self.title
