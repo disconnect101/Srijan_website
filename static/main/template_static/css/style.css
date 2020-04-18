@@ -526,6 +526,16 @@ h1, h2, h3, h4, h5, h6, figure {
     letter-spacing: 4px;
     font-size: 13px;
     color: #f6490d; }
+
+  .category {
+    display: block;
+    margin-bottom: 20px;
+    font-family: "Lora", Georgia, serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 13px;
+    color: #f6490d; }
+
     .blog-entry .category a {
       color: #f6490d; }
   .blog-entry h2 {
