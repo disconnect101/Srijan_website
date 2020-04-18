@@ -395,8 +395,8 @@
                                     <div class="f-entry">
                                         <a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}" class="featured-img" style="background-image: url({{ article.image.url }});"></a>
                                         <div class="desc">
-                                            <span><i class="icon-calendar3"></i> {{ article.date }}</span>
-                                            <h3><a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.description }}</a></h3>
+                                            <span class="category" style="margin-bottom: 0.5em;letter-spacing: 1px;line-height: 1;">{{ article.title }}</span>
+                                            <div style="line-height: 1.2;font-size: 12px" ><a style="color: #4d4d4d;" href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.description|truncatechars:70 }}</a></div>
                                         </div>
                                     </div>
                                 {% endif %}
