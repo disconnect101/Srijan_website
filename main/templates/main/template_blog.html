@@ -30,7 +30,7 @@
                                         {% endfor %}
 									</div>
                                     {% if not article_images.exists %}
-                                        <a href="#" class="blog image-popup-link" style="background-image: url({{ article.image.url  }}); margin-bottom: 2em;">
+                                        <a href="{{ article.image.url  }}" class="blog image-popup-link" style="background-image: url({{ article.image.url  }}); margin-bottom: 2em;">
 											</a>
                                     {% endif %}
 								</div>
