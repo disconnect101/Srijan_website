@@ -43,47 +43,48 @@
 							</div>
 
 						</article>
+                        <div style="background: rgba(255,255,255,0.9);">
+                            <h2 class="colorlib-heading-2" style="margin-bottom: -0.6em;">Comments</h2><hr>
+                            <div class="comment-box">
 
-                        <h2 class="colorlib-heading-2" style="margin-bottom: -0.6em;">Comments</h2><hr>
-						<div class="comment-box">
+                                {% for comment in comments %}
+                                    <div class="comment-post"><div class='row'>
 
-                            {% for comment in comments %}
-                                <div class="comment-post"><div class='row'>
+                                    <div class="col col-lg-8"><h1> {{ comment.firstname }} {{ comment.lastname }} </h1></div><small class="col col-lg-4" style='text-align: right;margin: auto'> {{ comment.date }}</small>
+                                    </div><p> {{ comment.comment }}</p>
 
-                                <div class="col col-lg-8"><h1> {{ comment.firstname }} {{ comment.lastname }} </h1></div><small class="col col-lg-4" style='text-align: right;margin: auto'> {{ comment.date }}</small>
-                                </div><p> {{ comment.comment }}</p>
-
-                                </div>
-							{% endfor %}
-
-
-						</div>
-						<div class="comment-area">
-							<h2 class="colorlib-heading-2">Leave a comment</h2>
-                                {% csrf_token %}
-								<div class="row form-group">
-									<div class="col-md-6">
-										<!-- <label for="fname">First Name</label> -->
-										<input type="text" id="fname" class="form-control" placeholder="Your firstname">
-									</div>
-									<div class="col-md-6">
-										<!-- <label for="lname">Last Name</label> -->
-										<input type="text" id="lname" class="form-control" placeholder="Your lastname">
-									</div>
-								</div>
-
-								<div class="row form-group">
-									<div class="col-md-12">
-										<!-- <label for="message">Message</label> -->
-										<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Comment"></textarea>
-									</div>
-								</div>
-								<div class="form-group">
-                                    <button value="Post Comment" class="btn btn-primary" id="comment-button">Post Comment</button>
-								</div>
+                                    </div>
+                                {% endfor %}
 
 
-						</div>
+                            </div>
+                            <div class="comment-area">
+                                <h2 class="colorlib-heading-2">Leave a comment</h2>
+                                    {% csrf_token %}
+                                    <div class="row form-group">
+                                        <div class="col-md-6">
+                                            <!-- <label for="fname">First Name</label> -->
+                                            <input type="text" id="fname" class="form-control" placeholder="Your firstname">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <!-- <label for="lname">Last Name</label> -->
+                                            <input type="text" id="lname" class="form-control" placeholder="Your lastname">
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <!-- <label for="message">Message</label> -->
+                                            <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Comment"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button value="Post Comment" class="btn btn-primary" id="comment-button">Post Comment</button>
+                                    </div>
+
+
+                            </div>
+                        </div>
 
 
 					</div>
