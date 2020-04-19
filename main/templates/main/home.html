@@ -422,7 +422,7 @@
 						
 						<div id="colorlib-container">
 							<div class="container">
-								<div class="row">
+								<div class="row" style="margin-bottom: 3em;">
 									<div class="col-md-6">
 										<img class="img-responsive" src="{{ publications.first.cover_image.url }}" alt="">
 									</div>
@@ -447,17 +447,46 @@
 				                        </div>
 									</div>
 								</div>
+								<div class="row">
+
+															<style type="text/css">
+																.a-block {
+																    display: block;
+																    background-size: cover;
+																    background-position: center center;
+																    padding: 30px;
+																    position: relative;
+																    margin-bottom: 30px;
+																    height: 300px;
+																}
+																.box-shadow {
+																  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.08);
+																  transition: box-shadow 0.3s ease-in-out;
+																}
+																.box-shadow:hover {
+																  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.5);
+																}
+
+															</style>
+                                    {% if publications.count > 1 %}
+                                        <div >
+                                            <h2  style="margin: 1.5em 0px 0.2em 15px;">More Publications</h2>
+                                            <hr style="margin-top: 0.2em;height: 1px;background-color: darkslategrey;">
+                                            {% for pub in publications %}
+                                                {% if pub.id is not publications.first.id %}
+                                                <div class="col-md-6 col-lg-4" style="padding: 10px 15px 5px 15px;width: 20em;display: block;margin: auto !important; background-color: white;box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.5);">
+                                                    <a href="#" class="a-block box-shadow" style="background-image: url('{{ pub.cover_image.url }}'); ">
+                                                    </a>
+                                                     <h3 class="text-center">{{ pub.title }}</h3>
+                                                 </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+								</div>
 							</div>
 						</div>
-						<div class="row">
-							<div class="gallery-wrap">
-								{% for article in articles %}
-										<a href="{{ article.image.url }}" class="gallery image-popup-link text-center" style="	background-image: url({{ article.image.url }});">
-										<span><i class="icon-search3"></i></span>
-									</a>
-								{% endfor %}						
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -521,7 +550,7 @@
 		</div>
 		</section>	
 
-		<section class="jumbotron">
+		<section class="jumbotron" style="margin-bottom: 3em;">
 				<h1 class="text-center">Sound of Silence</h1>
 				<hr>
 			<div id="colorlib-container">
@@ -563,6 +592,32 @@
 			</div>
 			
 		</section>
+
+		<div class="container">
+			<div>
+				<h1 class="text-center" style="margin-bottom: 0.2em;">
+					Gallery
+				</h1>
+				<hr style="background-color: darkslategrey;height: 1px;margin-top: 0.2em;">
+			</div>
+			<div class="colorlib-container">
+				<div class="row">
+					<div class="gallery-wrap">
+						{% for article in articles %}
+							<a href="{{ article.image.url }}" class="gallery image-popup-link text-center" style="	background-image: url({{ article.image.url }});">
+							<span><i class="icon-search3"></i></span>
+											</a>
+						{% endfor %}						
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		
+
+
 	</div>
 
     {% include 'main/footer.html' %}
