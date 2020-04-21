@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a72d0d9-9e76-46a5-908e-ee5f876c93bd" name="Default Changelist" comment="" />
+    <list default="true" id="3a72d0d9-9e76-46a5-908e-ee5f876c93bd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/main/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/home.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,6 +104,8 @@
       <workItem from="1587057911821" duration="19024000" />
       <workItem from="1587172770587" duration="8932000" />
       <workItem from="1587274964127" duration="2456000" />
+      <workItem from="1587422719052" duration="100000" />
+      <workItem from="1587459212630" duration="3219000" />
     </task>
     <servers />
   </component>
@@ -112,10 +117,10 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="587" y="214" width="800" height="679" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1584351570118" />
-    <state x="770" y="297" width="424" height="515" key="FileChooserDialogImpl" timestamp="1586225880788">
+    <state x="770" y="297" width="424" height="515" key="FileChooserDialogImpl" timestamp="1587422755363">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="770" y="297" width="424" height="515" key="FileChooserDialogImpl/65.25.1855.1055@65.25.1855.1055" timestamp="1586225880788" />
+    <state x="770" y="297" width="424" height="515" key="FileChooserDialogImpl/65.25.1855.1055@65.25.1855.1055" timestamp="1587422755363" />
     <state width="1809" height="278" key="GridCell.Tab.0.bottom" timestamp="1586231311160">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -136,9 +141,9 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="481" y="187" width="1022" height="732" key="SettingsEditor/65.25.1855.1055@65.25.1855.1055" timestamp="1584186710812" />
-    <state x="648" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1587274963046">
+    <state x="648" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1587422736237">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="648" y="380" key="com.intellij.ide.util.TipDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1587274963046" />
+    <state x="648" y="380" key="com.intellij.ide.util.TipDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1587422736237" />
   </component>
 </project>

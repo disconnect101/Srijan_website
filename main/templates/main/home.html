@@ -359,15 +359,15 @@
 		<div id="colorlib-container">
 			<div class="container">
 				<h1 class="mt-4">Career</h1>
-				<hr>
-				<div class="row">
+				<hr style="border: 0; background-color: darkslategrey; height: 1px;">
+				 <div class="row">
 					<div class="content" style="margin-top: 40px;">
 						<article class="blog-flex">
 							<a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}" class="half blog-img" style="background-image: url({{ career_articles.first.image.url  }});"></a>
 							<div class="half">
 								<div class="desc">
-									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}">{{ career_articles.first.title }}</a></span>
-									<h2><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}">{{ career_articles.first.description }}</a></h2>
+									<span class="category">{{ career_articles.first.title }}</span>
+									<h2>{{ career_articles.first.description }}</h2>
 									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}"><i class="icon-calendar3"></i> {{ career_articles.first.date }}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by- {{ career_articles.first.author }}</a>
 									<p class="first-letra card-text">{% autoescape off %}{{ career_articles.first.content|truncatewords:50 }}{% endautoescape %}</p>
 									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}" class="btn btn-primary btn-custom" style="color: white">Continue Reading</a></p>
@@ -472,15 +472,17 @@
                                         <div >
                                             <h2  style="margin: 1.5em 0px 0.2em 15px;">More Publications</h2>
                                             <hr style="margin-top: 0.2em;height: 1px;background-color: darkslategrey;">
-                                            {% for pub in publications %}
-                                                {% if pub.id is not publications.first.id %}
-                                                <div class="col-md-6 col-lg-4" style="padding: 10px 15px 5px 15px;width: 20em;display: block;margin: auto !important; background-color: white;box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.5);">
-                                                    <a href="{% url 'view_publication' %}{{ "?id=" }}{{ pub.id }}" class="a-block box-shadow" style="background-image: url('{{ pub.cover_image.url }}'); ">
-                                                    </a>
-                                                     <h3 class="text-center">{{ pub.title }}</h3>
-                                                 </div>
-                                                {% endif %}
-                                            {% endfor %}
+                                            <div class="container">
+	                                            {% for pub in publications %}
+	                                                {% if pub.id is not publications.first.id %}
+	                                                <div class="col-md-6 col-lg-4" style="padding: 10px 15px 5px 15px;width: 20em;display: block;margin: auto !important; background-color: white;box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.5);">
+	                                                    <a href="{% url 'view_publication' %}{{ "?id=" }}{{ pub.id }}" class="a-block box-shadow" style="background-image: url('{{ pub.cover_image.url }}'); ">
+	                                                    </a>
+	                                                     <h3 class="text-center">{{ pub.title }}</h3>
+	                                                 </div>
+	                                                {% endif %}
+	                                            {% endfor %}
+	                                        </div>
                                         </div>
                                     {% endif %}
 								</div>
@@ -498,15 +500,15 @@
 		<div id="colorlib-container">
 			<div class="container">
 				<h1 class="mt-4">Campus</h1>
-				<hr>
+				<hr style="border: 0; background-color: darkslategrey; height: 1px;">
 				<div class="row">
 					<div class="content" style="margin-top: 40px;">
 						<article class="blog-flex">
 							<a href="{% url 'articles' %}{{ "?id=" }}{{ campus_articles.first.id }}" class="half blog-img" style="background-image: url({{ campus_articles.first.image.url  }});"></a>
 							<div class="half">
 								<div class="desc">
-									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}">{{ campus_articles.first.title }}</a></span>
-									<h2><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}">{{ campus_articles.first.description }}</a></h2>
+									<span class="category">{{ campus_articles.first.title }}</span>
+									<h2>{{ campus_articles.first.description }}</h2>
 									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}"><i class="icon-calendar3"></i> {{ campus_articles.first.date }}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by- {{ campus_articles.first.author }}</a>
 									<p class="first-letra card-text">{% autoescape off %}{{ campus_articles.first.content|truncatewords:50 }}{% endautoescape %}</p>
 									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ campus_articles.first.id }}" class="btn btn-primary btn-custom" style="color: white">Continue Reading</a></p>
@@ -550,9 +552,74 @@
 		</div>
 		</section>	
 
-		<section class="jumbotron" style="margin-bottom: 3em;">
-				<h1 class="text-center">Sound of Silence</h1>
+		<section style="margin-bottom: 10em;">
+			<div class="container">
+				<h1>Pic of the week</h1>
 				<hr>
+				<img src="{% static 'main/picoftheweek.jpg' %}"  style="width: 100%;margin-bottom: 1em;">
+				<div style="margin-top: 2em;background-color: rgb(250,250,250);">
+					<div class="container" >
+						<div class="row">
+							<div class="col-lg-3">
+								<img src="{% static 'main/user.png' %}" style="margin-top: 1em;margin-bottom: 1em;">
+							</div>
+							<div class="col-lg-8" style="margin-top: 3em;">
+								<h3 style="margin: auto;" >By- Name Sirname year branch</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+
+		
+		</section>
+
+
+		<section style="background-image: url('/static/main/videoback.png');background-position: center;padding-bottom: 3em;">
+			<div class="container" >
+				<h1 style="color: white;margin-top: 3em;">Featured Video</h1>
+				<hr>
+				<iframe allowfullscreen width="100%" style="height: 65vh;" src="https://www.youtube.com/embed/f1QGnq9jUU0">
+				</iframe>
+				<div class="text-center" style="margin-top: 2em;background-color: rgba(255,255,255,0.5);padding: 2em 3em 2em 2em;">
+					
+						<div>
+							<h2 style="margin-top: em;">
+								About the Video	
+							</h2>
+							<hr>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+						</div>
+					
+				</div>
+			</div>
+			
+
+		
+		</section>
+
+		<section class="jumbotron" style="margin-bottom: 3em;">
+				<h1 class="text-center" style="margin-bottom: 0px;position: relative">Sound of Silence</h1>
+            <style>
+                hr.type_5 {
+                    border: 0;
+                    height: 55px;
+                    background-image: url({% static 'main/type_5.webp' %});
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    margin-top: -2em;
+                    position: relative;
+                    z-index: 3;
+                    }
+            </style>
+				<hr class="type_5" >
 			<div id="colorlib-container">
 				<div class="container">
 					<div class="row">
@@ -593,25 +660,27 @@
 			
 		</section>
 
-		<div class="container">
-			<div>
-				<h1 class="text-center" style="margin-bottom: 0.2em;">
-					Gallery
-				</h1>
-				<hr style="background-color: darkslategrey;height: 1px;margin-top: 0.2em;">
-			</div>
-			<div class="colorlib-container">
-				<div class="row">
-					<div class="gallery-wrap">
-						{% for article in articles %}
-							<a href="{{ article.image.url }}" class="gallery image-popup-link text-center" style="	background-image: url({{ article.image.url }});">
-							<span><i class="icon-search3"></i></span>
-											</a>
-						{% endfor %}						
+		<section style="margin-bottom: 10em;margin-top: 8em;">
+			<div class="container" >
+				<div>
+					<h1 class="text-center" style="margin-bottom: 0.2em;">
+						Gallery
+					</h1>
+					<hr style="background-color: darkslategrey;height: 1px;margin-top: 0.2em;">
+				</div>
+				<div class="colorlib-container">
+					<div class="row">
+						<div class="gallery-wrap">
+							{% for article in articles %}
+								<a href="{{ article.image.url }}" class="gallery image-popup-link text-center" style="	background-image: url({{ article.image.url }});">
+								<span><i class="icon-search3"></i></span>
+												</a>
+							{% endfor %}						
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 
 
 
