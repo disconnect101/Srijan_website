@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
-from main.views import uploadArticle
+from main.views import aboutus
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +27,7 @@ urlpatterns = [
     path('campus/', include('main.urls')),
     path('sos/', include('main.urls')),
     path('pub/', include('main.urls')),
+    path('aboutus/', aboutus),
     path('', include('main.urls')),
 ]
 

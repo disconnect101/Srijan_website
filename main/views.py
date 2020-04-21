@@ -22,7 +22,8 @@ def home(request):
 
 	return render(request, 'main/home.html', context)
 
-
+def aboutus(request):
+	return render(request, 'main/aboutus.html')
 
 def uploadArticle(request):
 	context = {}
