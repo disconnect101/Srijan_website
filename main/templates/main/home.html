@@ -642,6 +642,7 @@
 							{% autoescape off %}
                             {{ sos_articles.first.content|truncatewords:200 }}
                             {% endautoescape %}
+                        <a href="{% url 'articles' %}{{ "?id=" }}{{ sos_articles.first.id }}" class="btn btn-primary btn-custom" style="color: white">Continue Reading</a>
 							<div class="row">
 								<div class="col-lg-6">
 									<ul class="colorlib-social-icons">
