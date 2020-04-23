@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'main/template_static/css/style.css' %}">
+
 
 <!--
 
@@ -54,6 +54,7 @@
 	</div>
 
 -->
+<div id="page">
 	<aside id="colorlib-hero">
 			<div class="flexslider">
 				<ul class="slides">
@@ -369,7 +370,7 @@
 								<div class="desc">
 									<span class="category">{{ career_articles.first.title }}</span>
 									<h2>{{ career_articles.first.description }}</h2>
-									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}"><i class="icon-calendar3"></i> {{ career_articles.first.date }}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by- {{ career_articles.first.author }}</a>
+									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}"><i class="icon-calendar3"></i> {{ career_articles.first.date }}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by- {{ career_articles.first.author }}</a></span>
 									<p class="first-letra card-text">{% autoescape off %}{{ career_articles.first.content|truncatewords:50 }}{% endautoescape %}</p>
 									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}" class="btn btn-primary btn-custom" style="color: white">Continue Reading</a></p>
 								</div>
@@ -683,7 +684,7 @@
 
 
 	</div>
-
+</div>
 
 
 
