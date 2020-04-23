@@ -12,12 +12,10 @@
 				<div class="row">
 					<div class="content">
 						<article class="blog-entry" style="margin-bottom: 0px;border-bottom: 0px;">
-							<div >
+							<div class="blog-wrap" style="background-color: rgba(255,255,255,0.9);padding: 2em 2em 1em 2em;">
                                 <input type="hidden" id="article-id" value="{{ article.id }}">
-                            <div style="background-color: rgba(255,255,255,0.9);padding: 2em 1em 1em 1em; margin-bottom: 1em;">
 								<span class="category text-center">{{ article.title }} #{{ article.id }}</span>
 								<h2 class="text-center"><a href="#">{{ article.description }}</a></h2>
-                            </div>
 								<div class="blog-image">
 									<div class="owl-carousel owl-carousel2 blog-item">
 										<div class="item">
@@ -36,7 +34,7 @@
 											</a>
                                     {% endif %}
 								</div>
-								<span class="category text-center" style="background-color: rgba(255,255,255,0.9);padding: 2em 1em 1.3em 1em; margin-bottom: 1em;"><a href="blog.html" class="posted-by"><i class="icon-user2"></i> by - {{ article.author }}</a> | <a href="blog.html"><i class="icon-calendar3"></i> {{ article.date }}</a></span>
+								<span class="category text-center"><a href="blog.html" class="posted-by"><i class="icon-user2"></i> by - {{ article.author }}</a> | <a href="blog.html"><i class="icon-calendar3"></i> {{ article.date }}</a></span>
 							</div>
 							<div class="desc" style="background: rgba(255,255,255,0.7);padding: 2em 2em 3em 2em;">
                                 {% autoescape off %}
