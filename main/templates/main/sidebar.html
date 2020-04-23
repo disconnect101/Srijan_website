@@ -3,6 +3,7 @@
 
 
 
+                        <!--
 
 						<div class="side">
 							<h2 class="sidebar-heading">Subscribe to our newsletter</h2>
@@ -20,9 +21,10 @@
 								</p>
 							</div>
 						</div>
+                        -->
 
-						<div class="side-wrap">
-							<h2 class="sidebar-heading">Recent Post</h2>
+						<div class="side-wrap" style="background-color: rgba(255,255,255,0.2);padding: 2em 1em 2em 1em;">
+							<h2 class="sidebar-heading custom-text" style="color: #FFFFFF">Recent Post</h2>
 
 							{% for article in recentarticles %}
 								<div class="f-entry" style="padding: 0px; min-height: 100px;">
@@ -34,9 +36,12 @@
                                     </div>
 							{% endfor %}
 
-
 						</div>
-						<div class="side-wrap">
+
+
+
+                        <!--
+						<div class="side-wrap" style="background-color: rgba(255,255,255,0.5);padding: 2em 1em 2em 1em;">
 							<h2 class="sidebar-heading">Categories</h2>
 							<ul class="category">
 								<li><a href="/campus/campus_all/"><i class="icon-check"></i> Campus</a></li>
@@ -46,7 +51,11 @@
 								<li><a href="/sos/sos_all/"><i class="icon-check"></i> Sound of Silence</a></li>
 							</ul>
 						</div>
-						<div class="side-wrap">
+						-->
+
+
+
+						<div class="side-wrap" style="background-color: rgba(255,255,255,10);padding: 2em 1em 2em 1em;">
 							<h2 class="sidebar-heading">Video Post</h2>
 							<div class="video colorlib-video" style="background-image: url(images/blog-1.jpg);">
 								<a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-play"></i></a>
@@ -54,7 +63,7 @@
 							</div>
 						</div>
 
-						<div class="side-wrap">
+						<div class="side-wrap" style="background-color: rgba(255,255,255,10);padding: 2em 1em 2em 1em;">
 							<h2 class="sidebar-heading">Gallery</h2>
 							{% for article_image in all_articles_images %}
 								<a href="{{ article_image.image.url }}" class="gallery image-popup-link text-center" style="background-image: url({{ article_image.image.url }});">
@@ -63,7 +72,7 @@
 							{% endfor %}
 						</div>
 
-						<div class="side-wrap">
+						<div class="side-wrap" style="background-color: rgba(255,255,255,0.5);padding: 2em 1em 2em 1em;">
 							<h2 class="sidebar-heading">Blockquote</h2>
 							<blockquote>
 								" Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.

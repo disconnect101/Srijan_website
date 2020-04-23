@@ -354,11 +354,12 @@
 
 
 	<div>
+		
 		<section>
 
 		<div id="colorlib-container">
-			<div class="container">
-				<h1 class="mt-4">Career</h1>
+			<div class="container" style="background-color: rgba(255,255,255,0.5);padding: 2em 2.5em 1em 2.5em;">
+				<h1 class="mt-4 ">Career</h1>
 				<hr style="border: 0; background-color: darkslategrey; height: 1px;">
 				 <div class="row">
 					<div class="content" style="margin-top: 40px;">
@@ -373,12 +374,7 @@
 									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}" class="btn btn-primary btn-custom" style="color: white">Continue Reading</a></p>
 								</div>
 							</div>
-							<ul class="share">
-								<li class="text-vertical"><i class="icon-share3"></i></li>
-								<li><a href="#"><i class="icon-facebook"></i></a></li>
-								<li><a href="#"><i class="icon-twitter"></i></a></li>
-								<li><a href="#"><i class="icon-googleplus"></i></a></li>
-							</ul>
+
 						</article>
 
 
@@ -388,7 +384,7 @@
 						
 						
 						<div class="side-wrap">
-							<h2 class="sidebar-heading">More Posts</h2>
+							<h2 class="sidebar-heading ">More Posts</h2>
                             {% for article in career_articles %}
                                 {% if article.id is not career_articles.first.id %}
 
@@ -422,7 +418,7 @@
 						
 						<div id="colorlib-container">
 							<div class="container">
-								<div class="row" style="margin-bottom: 3em;">
+								<div class="row" style="margin-bottom: 1em;">
 									<div class="col-md-6">
 										<img class="img-responsive" src="{{ publications.first.cover_image.url }}" alt="">
 									</div>
@@ -495,10 +491,10 @@
 			
 		</section>	
 
-		<section>
+		<section style="margin-bottom: 2em;">
 
 		<div id="colorlib-container">
-			<div class="container">
+			<div class="container" style="background-color: rgba(255,255,255,0.5);padding: 2em 2.5em 1em 2.5em;">
 				<h1 class="mt-4">Campus</h1>
 				<hr style="border: 0; background-color: darkslategrey; height: 1px;">
 				<div class="row">
@@ -514,12 +510,7 @@
 									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ campus_articles.first.id }}" class="btn btn-primary btn-custom" style="color: white">Continue Reading</a></p>
 								</div>
 							</div>
-							<ul class="share">
-								<li class="text-vertical"><i class="icon-share3"></i></li>
-								<li><a href="#"><i class="icon-facebook"></i></a></li>
-								<li><a href="#"><i class="icon-twitter"></i></a></li>
-								<li><a href="#"><i class="icon-googleplus"></i></a></li>
-							</ul>
+
 						</article>
 						
 						
@@ -542,8 +533,8 @@
                                     </div>
                                 {% endif %}
                             {% endfor %}
-							<div class="col-lg-12" style="text-align: right;s">
-                            	<a href="/career/campus_all/" style="color: orange;ali">more articles...</a>
+							<div class="col-lg-12" style="text-align: right;">
+                            	<a href="/career/campus_all/" style="color: orange;">more articles...</a>
                         	</div>
 						</div>
 					</aside>
@@ -552,9 +543,9 @@
 		</div>
 		</section>	
 
-		<section style="margin-bottom: 10em;">
+		<section style="margin-bottom: 10em;margin-top: 4em;">
 			<div class="container">
-				<h1>Pic of the week</h1>
+				<h1 class="custom-text">Pic of the week</h1>
 				<hr>
 				<img src="{% static 'main/picoftheweek.jpg' %}"  style="width: 100%;margin-bottom: 1em;">
 				<div style="margin-top: 2em;background-color: rgb(250,250,250);">
@@ -624,7 +615,11 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6" style="margin: 1em;">
-							<!--<img class="img-responsive" src="/static/main/sos.jpg" alt="">-->
+
+	
+
+
+							
 							<img class="img-responsive" src="{{ sos_articles.first.image.url }}" alt="" >
 						</div>
 						<div>
@@ -632,13 +627,7 @@
 								{{ sos_articles.first.title }}
 							</h2>
 							<hr style="border: 0; background-color: darkslategrey; height: 1px;">
-						<!--
-							<p>Hi! My Name is <strong>Steph</strong> Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-							<blockquote>
-								A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-							</blockquote>
-							<p class="first-letra">Far far away, <strong><a href="#">behind the word mountains</a></strong>, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>\
-						-->
+						
 							{% autoescape off %}
                             {{ sos_articles.first.content|truncatewords:200 }}
                             {% endautoescape %}
@@ -663,8 +652,11 @@
 			
 		</section>
 
+
+
+
 		<section style="margin-bottom: 10em;margin-top: 8em;">
-			<div class="container" >
+			<div class="container" style="background-color: rgba(255,255,255,0.5);padding: 2em 2.5em 1em 2.5em;">
 				<div>
 					<h1 class="text-center" style="margin-bottom: 0.2em;">
 						Gallery
@@ -685,14 +677,18 @@
 			</div>
 		</section>
 
-
+        {% include 'main/footer.html' %}
 
 		
 
 
 	</div>
 
-    {% include 'main/footer.html' %}
+
+
+
+
+    <!--{% include 'main/footer.html' %}-->
 
 
 

@@ -12,10 +12,12 @@
 				<div class="row">
 					<div class="content">
 						<article class="blog-entry" style="margin-bottom: 0px;border-bottom: 0px;">
-							<div class="blog-wrap">
+							<div >
                                 <input type="hidden" id="article-id" value="{{ article.id }}">
+                            <div style="background-color: rgba(255,255,255,0.9);padding: 2em 1em 1em 1em; margin-bottom: 1em;">
 								<span class="category text-center">{{ article.title }} #{{ article.id }}</span>
 								<h2 class="text-center"><a href="#">{{ article.description }}</a></h2>
+                            </div>
 								<div class="blog-image">
 									<div class="owl-carousel owl-carousel2 blog-item">
 										<div class="item">
@@ -34,21 +36,21 @@
 											</a>
                                     {% endif %}
 								</div>
-								<span class="category text-center"><a href="blog.html" class="posted-by"><i class="icon-user2"></i> by - {{ article.author }}</a> | <a href="blog.html"><i class="icon-calendar3"></i> {{ article.date }}</a></span>
+								<span class="category text-center" style="background-color: rgba(255,255,255,0.9);padding: 2em 1em 1.3em 1em; margin-bottom: 1em;"><a href="blog.html" class="posted-by"><i class="icon-user2"></i> by - {{ article.author }}</a> | <a href="blog.html"><i class="icon-calendar3"></i> {{ article.date }}</a></span>
 							</div>
-							<div class="desc" style="background: rgba(255,255,255,0.9);padding: 2em 0em 3em 0em;">
+							<div class="desc" style="background: rgba(255,255,255,0.7);padding: 2em 2em 3em 2em;">
                                 {% autoescape off %}
 								    {{ article.content }}
                                 {% endautoescape %}
 							</div>
 
 						</article>
-                        <div style="background: rgba(255,255,255,0.9);">
+                        <div style="background-color: rgba(255,255,255,0.5);padding: 2em 2.5em 3em 2.5em;">
                             <h2 class="colorlib-heading-2" style="margin-bottom: -0.6em;">Comments</h2><hr>
                             <div class="comment-box">
 
                                 {% for comment in comments %}
-                                    <div class="comment-post"><div class='row'>
+                                    <div class="comment-post" style="background-color: rgba(255,255,255,0.6);"><div class='row'>
 
                                     <div class="col col-lg-8"><h1> {{ comment.firstname }} {{ comment.lastname }} </h1></div><small class="col col-lg-4" style='text-align: right;margin: auto'> {{ comment.date }}</small>
                                     </div><p> {{ comment.comment }}</p>
@@ -58,13 +60,13 @@
 
 
                             </div>
-                            <div class="comment-area">
+                            <div class="comment-area" style="background-color: rgba(255,255,255,0.6);padding: 2em 2em 1em 2em;">
                                 <h2 class="colorlib-heading-2">Leave a comment</h2>
                                     {% csrf_token %}
-                                    <div class="row form-group">
+                                    <div class="row form-group" >
                                         <div class="col-md-6">
                                             <!-- <label for="fname">First Name</label> -->
-                                            <input type="text" id="fname" class="form-control" placeholder="Your firstname">
+                                            <input type="text" id="fname" class="form-control" placeholder="Your firstname" >
                                         </div>
                                         <div class="col-md-6">
                                             <!-- <label for="lname">Last Name</label> -->
@@ -91,18 +93,11 @@
 
 					<aside class="sidebar">
 
-						<div class="side-wrap">
+						<div class="side-wrap" style="background-color: rgba(255,255,255,0.5);padding: 2em 1em 2em 1em;">
 							<h2 class="sidebar-heading">About Author</h2>
 							<div class="author-img" style="background-image: url('/static/main/amisha.jpg');"></div>
 							<p>Hi! My Name is <strong>Amisha</strong> Aggrawal, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-							<p>
-								<ul class="colorlib-social-icons">
-									<li><a href="#"><i class="icon-twitter"></i></a></li>
-									<li><a href="#"><i class="icon-facebook"></i></a></li>
-									<li><a href="#"><i class="icon-linkedin"></i></a></li>
-									<li><a href="#"><i class="icon-dribbble"></i></a></li>
-								</ul>
-							</p>
+
 						</div>
 
 						{% include 'main/sidebar.html' %}
