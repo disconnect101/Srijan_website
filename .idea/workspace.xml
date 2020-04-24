@@ -4,10 +4,10 @@
     <list default="true" id="3a72d0d9-9e76-46a5-908e-ee5f876c93bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/main/campus.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/campus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/main/career.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/career.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/main/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/main/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/sidebar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/main/template_blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/template_blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/main/base_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/base_script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/main/base_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/base_style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +110,8 @@
       <workItem from="1587274964127" duration="2456000" />
       <workItem from="1587422719052" duration="100000" />
       <workItem from="1587459212630" duration="7051000" />
-      <workItem from="1587644471944" duration="8088000" />
+      <workItem from="1587644471944" duration="8293000" />
+      <workItem from="1587713933745" duration="5097000" />
     </task>
     <servers />
   </component>
@@ -146,10 +147,10 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="481" y="187" width="1022" height="732" key="SettingsEditor/65.25.1855.1055@65.25.1855.1055" timestamp="1584186710812" />
-    <state x="648" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1587646729887">
+    <state x="648" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1587713932328">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="648" y="380" key="com.intellij.ide.util.TipDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1587646729887" />
+    <state x="648" y="380" key="com.intellij.ide.util.TipDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1587713932328" />
     <state x="655" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1587649398622">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>

@@ -25,3 +25,41 @@ $(document).ready(function () {
 
 /*.closest('.custom-category').children('#card').children("img").attr("src",)*/
 
+
+/*
+window.onscroll = function() {myFunction()};
+
+
+var navbar = document.getElementById('navbar');
+
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+    console.log('scrolling');
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}*/
+
+var yourNavigation = $('#navbar');
+    stickyDiv = "sticky";
+    yourHeader = $('#header').height();
+
+
+
+$(window).scroll(function() {
+    console.log($(this).scrollTop() + " " + yourHeader);
+    yourHeader = $('#header').height();
+var navtoggle = $('a.colorlib-nav-toggle');
+    //initpos = navtoggle.css("position");
+  if( $(this).scrollTop() > yourHeader ) {
+    yourNavigation.addClass(stickyDiv);
+    navtoggle.css("position", "fixed");
+  } else {
+    yourNavigation.removeClass(stickyDiv);
+    navtoggle.css("position", "absolute");
+  }
+});
