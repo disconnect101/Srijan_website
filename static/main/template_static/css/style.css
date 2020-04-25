@@ -1296,6 +1296,28 @@ input[type="text"] {
     transform: translateX(0px); }
   #colorlib-offcanvas a {
     color: rgba(255, 255, 255, 0.5); }
+
+
+
+
+
+
+
+
+
+		/* Added by Aditya for styling dropdown elements in mobile mode*/
+ 			#myDropdown > li > a {
+   			 color: black;}
+
+
+
+
+
+
+
+
+
+
     #colorlib-offcanvas a:hover {
       color: rgba(255, 255, 255, 0.8); }
   #colorlib-offcanvas ul {

@@ -131,7 +131,7 @@
 		    			Srijan
 		    			<br>
 		    		</h1>
-		    		<span style="font-size: 20px">Motilal Nehru National Institue of Technology, Prayagraj</span>
+		    		<span style="font-size: 20px">Motilal Nehru National Institue of Technology, Allahabd</span>
 		  </div>
 		 
 		   
@@ -149,12 +149,13 @@
 						<div class="col-xs-10 menu-1  text-right">
 							<ul>
 								<li><a href="/home">Home</a></li>
-								<li class="dropdown active">
-									<a href="/career/career_all/?type=all" class="dropbtn">Career</a>
+								<li class="has-dropdown dropdown active">
+									<a class="dropbtn">Career</a>
 									<ul id="myDropdown" class="file_menu dropdown-content">
 										<li><a href="/career/career_all/?type=intd">Inter Diaries</a></li>
 										<li><a href="/career/career_all/?type=als">AlumSays</a></li>
 										<li><a href="/career/career_all/?type=compe">Competetive Exams</a></li>
+										<li><a href="/career/career_all/?type=all">All</a></li>
 									</ul>
 								</li>
 								<li><a href="/campus/campus_all">Campus</a></li>
@@ -219,7 +220,7 @@
 			}
 
 			$(document).ready(function() {
-			    $(".dropdown").hover(
+			    $(".dropdown").on("click", 
 			        function() {
 			            $('ul.file_menu').stop(true, true).slideDown('medium');
 			        }
