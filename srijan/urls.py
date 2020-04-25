@@ -17,19 +17,24 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
-from main.views import aboutus
+from main.views import aboutus, home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('main/', include('main.urls')),
+    path('aboutus/', aboutus, name='aboutus'),
+    path('', home, name='home'),
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+
+"""""
     path('home/', include('main.urls')),
     path('article/', include('main.urls')),
     path('career/', include('main.urls')),
     path('campus/', include('main.urls')),
     path('sos/', include('main.urls')),
     path('pub/', include('main.urls')),
-    path('aboutus/', aboutus),
-    path('', include('main.urls')),
-]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+"""""

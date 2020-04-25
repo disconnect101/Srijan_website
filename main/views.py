@@ -3,6 +3,7 @@ from .forms import ArticleForm, CommentForm
 from .models import Articles, Comment, ArticleImages, Publications
 from django.http import JsonResponse
 
+
 # Create your views here.
 
 def home(request):
@@ -49,6 +50,8 @@ def articles(request):
 	all_articles_images = Articles.objects.order_by('date')[:8]
 
 	print("this is the title : " + article.title)
+
+
 	#article = []
 	#recentarticles = []
 

@@ -120,6 +120,10 @@
   </head>
 
   <body>
+
+  	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0"></script>
+
   	<div class="colorlib-loader"></div>
   	<div class="container" id="header">
 	   <div class="row" >  <!-- url({% static 'main/bookt.png' %}); -->
@@ -148,20 +152,20 @@
 						</div>
 						<div class="col-xs-10 menu-1  text-right">
 							<ul>
-								<li><a href="/home">Home</a></li>
+								<li><a href="{% url 'home' %}">Home</a></li>
 								<li class="has-dropdown dropdown">
 									<a class="dropbtn">Career ▾</a>
 									<ul id="myDropdown" class="file_menu dropdown-content">
-										<li><a href="/career/career_all/?type=intd">Intern Diaries</a></li>
-										<li><a href="/career/career_all/?type=als">AlumSays</a></li>
-										<li><a href="/career/career_all/?type=compe">Competetive Exams</a></li>
-										<li><a href="/career/career_all/?type=all">All</a></li>
+										<li><a href="{% url 'career' %}?type=intd">Intern Diaries</a></li>
+										<li><a href="{% url 'career' %}?type=als">AlumSays</a></li>
+										<li><a href="{% url 'career' %}?type=compe">Competetive Exams</a></li>
+										<li><a href="{% url 'career' %}?type=all">All</a></li>
 									</ul>
 								</li>
-								<li><a href="/campus/campus_all">Campus</a></li>
-								<li><a href="/sos/sos_all">Sound of Silence</a></li>
-								<li><a href="/pub/show_pub/">Publications</a></li>
-								<li><a href="/aboutus">About Us</a></li>
+								<li><a href="{% url 'campus' %}">Campus</a></li>
+								<li><a href="{% url 'sos' %}">Sound of Silence</a></li>
+								<li><a href="{% url 'publications' %}">Publications</a></li>
+								<li><a href="{% url 'aboutus' %}">About Us</a></li>
 							</ul>
 						</div>
 					</div>
