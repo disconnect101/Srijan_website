@@ -1,0 +1,6 @@
+clone this repo in ~/project
+to run the project configure apache2 server properly as per djando requirements
+make media folder in ~/project (not inside the clonned repo)
+
+make a file envvar_for_django in /etc  which would contain the environment
+variables for your project in JSON format.

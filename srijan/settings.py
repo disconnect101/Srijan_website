@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import json
+
+with open("/etc/envvar_for_django") as f:
+    secrets = json.loads(f.read())
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -137,7 +141,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-MEDIA_ROOT = '/home/' + os.environ.get('USER') + '/project/media/'
+MEDIA_ROOT = '/home/' + secrets['USER'] + '/project/media/'
 
 MEDIA_URL = '/media/'
 
