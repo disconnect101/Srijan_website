@@ -51,7 +51,7 @@ var yourNavigation = $('#navbar');
 
 
 $(window).scroll(function() {
-    console.log($(this).scrollTop() + " " + yourHeader);
+    //console.log($(this).scrollTop() + " " + yourHeader);
     yourHeader = $('#header').height();
 var navtoggle = $('a.colorlib-nav-toggle');
     //initpos = navtoggle.css("position");
