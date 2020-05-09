@@ -12,7 +12,7 @@ $('#comment-button').on('click', function () {
 
    $.ajax({
        type: 'POST',
-       url: '/article/comment/',
+       url: '/main/comment/',
        data: comment,
        success: function (data) {
             if (data){
