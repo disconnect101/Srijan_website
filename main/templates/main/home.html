@@ -369,7 +369,7 @@
 							<div class="half">
 								<div class="desc">
 									<span class="category">{{ career_articles.first.title }}</span>
-									<h2>{{ career_articles.first.description|truncatewords:50 }}</h2>
+									<h3>{{ career_articles.first.description|truncatewords:40 }}</h3>
 									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}"><i class="icon-calendar3"></i> {{ career_articles.first.date }}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by- {{ career_articles.first.author }}</a></span>
 									<p class="first-letra card-text">{% autoescape off %}{{ career_articles.first.content|truncatewords:50 }}{% endautoescape %}</p>
 									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}" class="btn btn-primary btn-custom" style="color: white">Continue Reading</a></p>
@@ -424,7 +424,7 @@
 							<div class="half">
 								<div class="desc">
 									<span class="category">{{ campus_articles.first.title }}</span>
-									<h2>{{ campus_articles.first.description }}</h2>
+									<h3>{{ campus_articles.first.description|truncatewords:40 }}</h3>
 									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ article.first.id }}"><i class="icon-calendar3"></i> {{ campus_articles.first.date }}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by- {{ campus_articles.first.author }}</a>
 									<p class="first-letra card-text">{% autoescape off %}{{ campus_articles.first.content|truncatewords:50 }}{% endautoescape %}</p>
 									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ campus_articles.first.id }}" class="btn btn-primary btn-custom" style="color: white">Continue Reading</a></p>
