@@ -369,7 +369,7 @@
 							<div class="half">
 								<div class="desc">
 									<span class="category">{{ career_articles.first.title }}</span>
-									<h2>{{ career_articles.first.description }}</h2>
+									<h2>{{ career_articles.first.description|truncatewords:50 }}</h2>
 									<span class="category"><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}"><i class="icon-calendar3"></i> {{ career_articles.first.date }}</a> | <a href="blog.html" class="posted-by"><i class="icon-user2"></i> by- {{ career_articles.first.author }}</a></span>
 									<p class="first-letra card-text">{% autoescape off %}{{ career_articles.first.content|truncatewords:50 }}{% endautoescape %}</p>
 									<p><a href="{% url 'articles' %}{{ "?id=" }}{{ career_articles.first.id }}" class="btn btn-primary btn-custom" style="color: white">Continue Reading</a></p>
@@ -399,7 +399,7 @@
                                 {% endif %}
                             {% endfor %}
                             <div class="col-lg-12" style="text-align: right;s">
-                            	<a href="/career/career_all/?type=all" style="color: orange;ali">more articles...</a>
+                            	<a href="/career/career_all/?type=all" style="color: white;">more articles...</a>
                         	</div>
 							
 						</div>
@@ -494,9 +494,11 @@
 													<li><a href="#"><i class="icon-dribbble"></i></a></li>
 												</ul>
 											</div>
+
 											<div class="col-lg-6" style="text-align: right;">
-				                            	<a href="/pub/show_pub/" class="btn btn-primary" style="color: white;font-size: 18px;">all publications...</a>
+				                            	<a href="{% url 'publications' %}" class="btn btn-primary" style="color: white;font-size: 18px;">all publications...</a>
 				                        	</div>
+
 				                        </div>
 									</div>
 								</div>
@@ -525,17 +527,17 @@
                                         <div >
                                             <h2  style="margin: 1.5em 0px 0.2em 15px;">More Publications</h2>
                                             <hr style="margin-top: 0.2em;height: 1px;background-color: darkslategrey;">
-                                            <div class="container">
+
 	                                            {% for pub in publications %}
 	                                                {% if pub.id is not publications.first.id %}
-	                                                <div class="col-md-6 col-lg-4" style="padding: 10px 15px 5px 15px;width: 20em;display: block;margin: auto !important; background-color: white;box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.5);">
-	                                                    <a href="{% url 'view_publication' %}{{ "?id=" }}{{ pub.id }}" class="a-block box-shadow" style="background-image: url('{{ pub.cover_image.url }}'); ">
-	                                                    </a>
-	                                                     <h3 class="text-center">{{ pub.title }}</h3>
-	                                                 </div>
+                                                            <div class="col-md-6 col-lg-4" style="padding: 10px 15px 5px 15px;width: 20em;height: 25em;display: block;margin: 20px; /*background-color: white;box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.5);*/">
+	                                                            <a href="{% url 'view_publication' %}{{ "?id=" }}{{ pub.id }}" class="a-block box-shadow" style="background-image: url('{{ pub.cover_image.url }}'); ">
+	                                                            </a>
+	                                                            <h3 class="text-center">{{ pub.title }}</h3>
+	                                                        </div>
 	                                                {% endif %}
 	                                            {% endfor %}
-	                                        </div>
+
                                         </div>
                                     {% endif %}
 								</div>
