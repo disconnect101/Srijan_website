@@ -1,0 +1,75 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'yearbook/alumni_profile.css' %}">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <style>
+        #content-div {
+            background: white;
+        }
+    </style>
+
+
+
+    <div class="container">
+
+        <div class="fb-profile">
+            <img align="left" style="margin-bottom: 1em;" class="fb-image-lg" src="{{ profile.coverphoto.url }}" alt="Profile image example"/>
+            <img align="left" style="margin-right: 2em;" class="fb-image-profile thumbnail" src="{{ profile.photo.url }}" alt="Profile image example"/>
+            <div class="fb-profile-text" >
+                <h1 style="margin-bottom: 3px;">{{ profile.name }}</h1>
+                <h4 style="margin-top: 8px; margin-bottom: 3px;">{{ profile.branch }}</h4>
+                <h4 style="margin-top: 8px;">{{ profile.regno }}</h4>
+            </div>
+        </div>
+
+        <hr style="margin-top: 5em; border-top: 2px solid #ddd;">
+
+        <div style="margin-top: 10em;">
+            <h1>
+                About Me
+            </h1>
+            <hr>
+            {{ profile.aboutme }}
+        </div>
+
+
+        <div style="margin-top: 5em;">
+            <h2>
+                Where do you see yourself in next 5 years
+            </h2>
+            <hr>
+            {{ profile.wdysy }}
+        </div>
+
+        <div style="margin-top: 5em;">
+            <h2 class="text-center">
+                Souvenir
+            </h2>
+            <hr>
+            <div>
+                <img src="{{ profile.souvenir.url }}" width="80%" style="margin-right: auto;margin-left: auto;display: block;">
+            </div>
+        </div>
+
+        <div style="margin-top: 8em; margin-bottom: 25vh;">
+            <h3>
+                Links
+            </h3>
+            <hr>
+            {{ profile.links }}
+        </div>
+
+    <div>
+
+
+
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+{% endblock content %}

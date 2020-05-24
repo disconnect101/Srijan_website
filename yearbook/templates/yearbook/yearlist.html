@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        #content-div {
+            background: white;
+        }
+    </style>
+
+
+
+    <div class="container">
+        <center><h1 style="color: blue; margin: 1em 0 2em 0;"><b>YearBook</b></h1></center>
+
+        <h2 style="color: blue;" class="mx-2">Registraion Numbers :</h2>
+        <hr>
+
+        <ul class="list-group">
+        {% for regno in regnos %}
+            <li class="list-group-item"><a href="{% url 'alumni' %}{{ '?regno=' }}{{ regno.regno }}" style="font-size: 16px;">{{ regno.regno }}</a></li>
+        {% endfor %}
+        </ul>
+    <div>
+
+
+
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+{% endblock content %}
