@@ -23,7 +23,7 @@ body
     max-height: 250px;
 }
 
-@media (max-width:768px)
+@media (max-width:992px) and (min-width: 642px)
 {
 
     .fb-profile-text>h1{
@@ -37,4 +37,27 @@ body
         z-index: 9;
         width: 20%;
     }
+}
+
+@media (max-width:642px)
+{
+    .fb-profile-text>h1{
+        font-weight: 700;
+        font-size:16px;
+    }
+
+    .fb-profile img.fb-image-lg{
+        z-index: 0;
+        width: 100%;
+        margin-bottom: 75px;
+    }
+
+    .fb-image-profile
+    {
+        margin: -120px 10px 0px 25px;
+        z-index: 9;
+        width: 20%;
+        max-height: 250px;
+    }
+
 }
