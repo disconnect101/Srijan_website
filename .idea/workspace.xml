@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3a72d0d9-9e76-46a5-908e-ee5f876c93bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srijan/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/srijan/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srijan/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/srijan/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/yearbook/alumni_profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/yearbook/alumni_profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/templates/yearbook/alumni.html" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/templates/yearbook/alumni.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/templates/yearbook/yearlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/templates/yearbook/yearlist.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +127,7 @@
       <workItem from="1589048784321" duration="759000" />
       <workItem from="1589904272206" duration="3115000" />
       <workItem from="1590133965720" duration="709000" />
-      <workItem from="1590201515476" duration="16555000" />
+      <workItem from="1590201515476" duration="19141000" />
     </task>
     <servers />
   </component>

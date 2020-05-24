@@ -4,6 +4,7 @@
 {% block content %}
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         #content-div {
             background: white;
@@ -14,9 +15,15 @@
 
     <div class="container">
         <center><h1 style="color: blue; margin: 1em 0 2em 0;"><b>YearBook</b></h1></center>
-
-        <h2 style="color: blue;" class="mx-2">Registraion Numbers :</h2>
-        <hr>
+        <div class="row">
+            <div class="col-lg-9">
+            <h2 style="color: blue; display: inline; " class="mx-2">Registraion Numbers :</h2>
+            </div>
+            <div class="col-lg-3">
+                <form method="GET" action="/yearbook/alumni" style="margin-top: 5px;"><input type="number" placeholder="registration no." name="regno"><button type="submit"><i class="fa fa-search"></i></button></form>
+            </div>
+        </div>
+        <hr style="margin-top: 2em;">
 
         <ul class="list-group">
         {% for regno in regnos %}

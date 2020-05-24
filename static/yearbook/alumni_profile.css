@@ -20,6 +20,7 @@ body
     margin: -110px 10px 0px 50px;
     z-index: 9;
     width: 20%;
+    max-height: 250px;
 }
 
 @media (max-width:768px)

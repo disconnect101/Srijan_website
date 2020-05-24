@@ -162,7 +162,13 @@
 										<li><a href="{% url 'career' %}?type=all">All</a></li>
 									</ul>
 								</li>
-								<li><a href="{% url 'campus' %}">Campus</a></li>
+								<li class="has-dropdown dropdown">
+									<a class="dropbtn">Campus ▾</a>
+									<ul id="myDropdown" class="file_menu dropdown-content">
+										<li><a href="{% url 'campus' %}?type=intd">Articles</a></li>
+										<li><a href="{% url 'yearbook' %}?type=als">Yearbook</a></li>
+									</ul>
+								</li>
 								<li><a href="{% url 'sos' %}">Sound of Silence</a></li>
 								<li><a href="{% url 'publications' %}">Publications</a></li>
 								<li><a href="{% url 'aboutus' %}">About Us</a></li>
@@ -227,9 +233,9 @@
 
 			$(document).ready(function() {
 			    $(".dropdown").on("click", 
-			        function() {
+			        function(event) {
 			        	if(dropped == 0){
-				            $('ul.file_menu').stop(true, true).slideDown('medium');
+				            $( event.target ).siblings().stop(true, true).slideDown('medium');
 				            dropped = 1;
 				            $('li.has-dropdown.dropdown > a').css("background-color", "#ddd");
 				        }
