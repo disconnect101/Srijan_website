@@ -38,14 +38,15 @@
             {{ profile.aboutme }}
         </div>
 
-
-        <div style="margin-top: 5em;">
-            <h2>
-                Where do you see yourself in next 5 years
-            </h2>
-            <hr>
-            {{ profile.wdysy }}
-        </div>
+        {% if profile.wdysy and profile.wdysy.strip %}
+            <div style="margin-top: 5em;">
+                <h2>
+                    Where do you see yourself in next 5 years
+                </h2>
+                <hr>
+                {{ profile.wdysy }}
+            </div>
+        {% endif %}
 
         <div style="margin-top: 5em;">
             <h2 class="text-center">

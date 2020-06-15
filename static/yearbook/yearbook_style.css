@@ -1,0 +1,31 @@
+.custom-font {
+	font-family: 'Tangerine', cursive;
+}
+
+.custom-font-1 {
+	font-family: 'Lobster', cursive;
+}
+
+.custom-font-2 {
+	font-family: 'Lobster', cursive;
+	font-family: 'Montserrat', sans-serif;
+}
+/*
+.regno-list-item:hover {
+	box-shadow: 0 3px 5px 0 rgba(0,0,0,0.5);
+	transition: box-shadow 0.2s ease-in-out;
+	border-radius: 6px;
+	padding: 10px 8px;
+}*/
+
+.regno-list-item {
+	box-shadow: 0 3px 5px 0 rgba(0,0,0,0.08);
+	transition: box-shadow 0.3s ease-in-out;
+	border-radius: 6px;
+	padding: 10px 8px;
+	margin: 3px 0;
+	text-decoration: none;
+}
+.regno-list-item:hover {
+	box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.5);
+}

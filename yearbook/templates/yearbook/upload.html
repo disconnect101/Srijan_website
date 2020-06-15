@@ -1,0 +1,64 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'yearbook/yearbook_style.css' %}">
+     <script src="{% static 'yearbook/ckeditor/ckeditor.js' %}"></script>
+    <style>
+        #content-div {
+            background: white;
+        }
+    </style>
+
+
+
+    <div class="container" >
+        <div >
+            <center><div style="margin: 1em 0 2em 0;font-size: 75px;" class="custom-font">Fill your YearBook</div></center>
+            {% if message is not null %}
+                {{ message }}
+            {% endif %}
+            <form method="post" action="/yearbook/upload/" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                Year:
+                <input name="year" type="number" required><br>
+                Registration Number:
+                <input name="regno" type="number" required><br>
+                Name:
+                <input name="name" type="text" required><br>
+                Branch:
+                <input name="branch" type="text" required><br>
+                About me
+                <input name="aboutme" type="text" required><br>
+                Where do you see your self in future
+                <input name="wdysy" type="text"><br>
+                Your favourite memory (optional)
+                <textarea id="editor" name="yfms">hello</textarea>
+                <!--input name="yfm" type="text"--><br>
+                links (optional)
+                <input name="links" type="text"><br>
+                Your Photo
+                <input name="photo" type="file" required><br>
+                Cover Photo
+                <input name="coverphoto" type="file" required><br>
+                Souvenir (optional)
+                <input name="souvenir" type="file"><br>
+
+
+                <input type="submit" class="btn btn-primary">
+            </form>
+        </div>
+        <br><br><br>
+        <br><br><br>
+
+    <div>
+
+
+
+    <script>CKEDITOR.replace("editor");</script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% endblock content %}
