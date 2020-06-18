@@ -61,11 +61,3 @@ def uploadData(request):
     return render(request, 'yearbook/upload.html', {'form': form})
 
 
-def images_api(request):
-    if request.method == 'GET':
-        year = request.GET['year']
-        result = YearbookData.objects.filter(year=year)
-        return JsonResponse({'result': list(result)})
-    else:
-        return Http404('Improper request')
-
