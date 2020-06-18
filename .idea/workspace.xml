@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a72d0d9-9e76-46a5-908e-ee5f876c93bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yearbook/templates/yearbook/yearlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/templates/yearbook/yearlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yearbook/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +131,7 @@
       <workItem from="1592244733405" duration="7016000" />
       <workItem from="1592375153168" duration="19839000" />
       <workItem from="1592415151165" duration="9725000" />
-      <workItem from="1592476014266" duration="21876000" />
+      <workItem from="1592476014266" duration="21931000" />
     </task>
     <servers />
   </component>
