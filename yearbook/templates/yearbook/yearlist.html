@@ -59,7 +59,7 @@
         counter = 0;
         fulllength = 0;
         $(window).scroll(function () {
-            if(/*($(window).scrollTop() + $(window).height() == $(document).height()) && $('#imagelist').css('display')=='block'*/true){
+            if(($(window).scrollTop() + $(window).height() == $(document).height()-200) && $('#imagelist').css('display')=='block'){
                 for(var i=1 ; i<=6 && counter<fulllength ; i++, counter++) {
                     var name = arrlist[counter].childNodes[2].innerText;
                     var regno = arrlist[counter].childNodes[0].innerText;
