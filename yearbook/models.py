@@ -13,7 +13,7 @@ class YearbookData(models.Model):
     links = RichTextField(null=True, blank=True)
     souvenir = models.ImageField(upload_to='images/yearbook_souvenirs/', null=True, blank=True)
     photo = models.ImageField(upload_to='images/yearbook_photos/', null=True, blank=True)
-    coverphoto = models.ImageField(upload_to='images/yearbook_photos/', null=True)
+    coverphoto = models.ImageField(upload_to='images/yearbook_photos/', null=True, blank=True)
 
     def __str__(self):
         return str(self.regno)
