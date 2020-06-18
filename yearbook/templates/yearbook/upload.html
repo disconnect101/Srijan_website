@@ -4,8 +4,10 @@
 
 {% block content %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
     <link rel="stylesheet" href="{% static 'yearbook/yearbook_style.css' %}">
-     <script src="{% static 'yearbook/ckeditor/ckeditor.js' %}"></script>
+
     <style>
         #content-div {
             background: white;
@@ -16,37 +18,50 @@
 
     <div class="container" >
         <div >
-            <center><div style="margin: 1em 0 2em 0;font-size: 75px;" class="custom-font">Fill your YearBook</div></center>
-            {% if message is not null %}
-                {{ message }}
+            <center><div style="margin: 1em 0 1em 0;font-size: 75px;" class="custom-font">Fill your YearBook</div></center>
+            <a style="font-size: 20px;" href="{% url 'alumni' %}?regno={{ '20160000' }}">A sample of how your Yearbook entry would look like</a><br><br>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
             {% endif %}
             <form method="post" action="/yearbook/upload/" enctype="multipart/form-data">
                 {% csrf_token %}
 
-                Year:
-                <input name="year" type="number" required><br>
-                Registration Number:
-                <input name="regno" type="number" required><br>
-                Name:
-                <input name="name" type="text" required><br>
-                Branch:
-                <input name="branch" type="text" required><br>
-                About me
-                <input name="aboutme" type="text" required><br>
-                Where do you see your self in future
-                <input name="wdysy" type="text"><br>
-                Your favourite memory (optional)
-                <textarea id="editor" name="yfms">hello</textarea>
-                <!--input name="yfm" type="text"--><br>
-                links (optional)
-                <input name="links" type="text"><br>
-                Your Photo
-                <input name="photo" type="file" required><br>
-                Cover Photo
-                <input name="coverphoto" type="file" required><br>
-                Souvenir (optional)
-                <input name="souvenir" type="file"><br>
+                <label for="year" class="custom-font-2" style="font-size: 25px">Batch of*</label><br>
+                <input id="year" name="year" type="number" value="2020" readonly required><br><br><br>
 
+                <label for="regno" class="custom-font-2" style="font-size: 25px">Registration Number*</label><br>
+                <input name="regno" id="regno" type="number" required><br><br><br>
+
+                <label for="name" class="custom-font-2" style="font-size: 25px">Name*</label><br>
+                <input name="name" id="name" type="text" required><br><br><br>
+
+                <label for="branch" class="custom-font-2" style="font-size: 25px">Branch*</label><br>
+                <input name="branch" id="branch" type="text" required><br><br><br>
+
+                <label for="aboutme" class="custom-font-2" style="font-size: 25px">About me*</label><br>
+                <textarea name="aboutme" id="aboutme" class="editor" required></textarea><br><br><br>
+
+
+                <label for="yfm" class="custom-font-2" style="font-size: 25px">Your favourite memory (optional)</label><br>
+                <textarea class="editor" id="yfm" name="yfm"></textarea><br><br><br>
+
+                <!--input name="yfm" type="text"--><br>
+                <label for="links" class="custom-font-2" style="font-size: 25px">links (optional)</label><br>
+                <textarea name="links" id="links" class="editor" placeholder="">eg.<br><a href="https://youtu.be/DQPKQEEbofE">Music Video</a><br>
+                    <a href="https://youtu.be/DQPKQEEbofE">Your performance</a><br><a href="https://testing123xyz">Your Art Work</a><br><br>Press CTRL+K to insert link</textarea><br><br><br>
+
+                <label for="photo" class="custom-font-2" style="font-size: 25px">Your Photo*</label><br>
+                <input name="photo" id="photo" type="file" required><br><br><br>
+
+                <label for="coverphoto" class="custom-font-2" style="font-size: 25px">Cover Photo*</label><br>
+                <input name="coverphoto" id="coverphoto" type="file" required><br><br><br>
+
+                <label for="souvenir" class="custom-font-2" style="font-size: 25px">Souvenir (optional)</label><br>
+                <input name="souvenir" id="souvenir" type="file"><br><br><br>
 
                 <input type="submit" class="btn btn-primary">
             </form>
@@ -58,7 +73,7 @@
 
 
 
-    <script>CKEDITOR.replace("editor");</script>
+    <script>CKEDITOR.replaceAll('editor');</script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 {% endblock content %}

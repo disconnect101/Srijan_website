@@ -12,18 +12,18 @@
 
 
 
-    <div class="container">
-        <center><div style="margin: 1em 0 2em 0;font-size: 75px;" class="custom-font">YearBook</div></center>
+    <div class="container" style="margin-bottom: 5em;">
+        <center><div style="margin: 1em 0 1em 0;font-size: 75px;" class="custom-font">YearBook</div></center>
 
-        <h2 style="color: blue;" class="mx-2">Years :</h2>
+        <h2 style="color: black;margin-left: 1em;" class="mx-2 custom-font-1">Years :</h2>
         <hr>
 
-        <ul class="list-group">
+        <ul class="">
         {% for year in years %}
-            <li class="list-group-item"><a href="{% url 'yearlist' %}{{ '?year=' }}{{ year.year }}" style="font-size: 26px;">{{ year.year }}</a></li>
+            <a href="{% url 'yearlist' %}{{ '?year=' }}{{ year.year }}" style="font-size: 26px; text-decoration: none"><div class="regno-list-item">{{ year.year }}</div></a>
         {% endfor %}
         </ul>
-    <div>
+    </div>
 
 
 

@@ -28,4 +28,18 @@
 }
 .regno-list-item:hover {
 	box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+
+.custom-hover-button {
+	box-shadow: 0 3px 5px 0 rgba(0,0,0,0.08);
+	transition: box-shadow 0.3s ease-in-out;
+	border-radius: 6px;
+	padding: 10px 8px;
+	margin: 3px 0;
+	text-decoration: none;
+}
+.custom-hover-button:hover {
+	box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
 }

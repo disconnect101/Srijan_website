@@ -4,10 +4,26 @@
     <list default="true" id="3a72d0d9-9e76-46a5-908e-ee5f876c93bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srijan/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/srijan/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/yearbook/yearbook_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/yearbook/yearbook_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/migrations/0002_auto_20200523_0824.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/migrations/0003_yearbookdata_branch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/migrations/0004_yearbookdata_coverphoto.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/migrations/0005_auto_20200613_1305.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/migrations/0006_auto_20200613_1307.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/migrations/0007_auto_20200613_1313.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/migrations/0008_auto_20200613_1900.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/migrations/0009_remove_yearbookdata_photo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/migrations/0010_auto_20200615_1830.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/migrations/0011_auto_20200615_1832.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/migrations/0012_auto_20200615_2030.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/yearbook/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yearbook/templates/yearbook/alumni.html" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/templates/yearbook/alumni.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yearbook/templates/yearbook/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/templates/yearbook/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/templates/yearbook/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/templates/yearbook/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/templates/yearbook/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/templates/yearbook/upload.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yearbook/templates/yearbook/yearlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/templates/yearbook/yearlist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yearbook/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yearbook/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/views.py" afterDir="false" />
@@ -23,10 +39,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Python Script" />
         <option value="CSS File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -136,7 +152,10 @@
       <workItem from="1591639177420" duration="603000" />
       <workItem from="1591709287434" duration="675000" />
       <workItem from="1592053203567" duration="7142000" />
-      <workItem from="1592244733405" duration="5443000" />
+      <workItem from="1592244733405" duration="7016000" />
+      <workItem from="1592375153168" duration="19839000" />
+      <workItem from="1592415151165" duration="9725000" />
+      <workItem from="1592476014266" duration="9866000" />
     </task>
     <servers />
   </component>
@@ -168,17 +187,27 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state width="1809" height="278" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1586231311160" />
-    <state x="481" y="187" width="1022" height="732" key="SettingsEditor" timestamp="1584186710812">
+    <state x="481" y="187" width="1022" height="732" key="SettingsEditor" timestamp="1592390534607">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="481" y="187" width="1022" height="732" key="SettingsEditor/65.25.1855.1055@65.25.1855.1055" timestamp="1584186710812" />
-    <state x="648" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1592244746917">
+    <state x="481" y="187" width="1022" height="732" key="SettingsEditor/65.25.1855.1055@65.25.1855.1055" timestamp="1592390534607" />
+    <state x="648" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1592476030319">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="648" y="380" key="com.intellij.ide.util.TipDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1592244746917" />
+    <state x="648" y="380" key="com.intellij.ide.util.TipDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1592476030319" />
     <state x="655" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1588175639138">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="655" y="257" width="672" height="678" key="search.everywhere.popup/65.25.1855.1055@65.25.1855.1055" timestamp="1588175639138" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/yearbook/models.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
