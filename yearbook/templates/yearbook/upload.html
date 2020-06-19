@@ -31,16 +31,16 @@
                 {% csrf_token %}
 
                 <label for="year" class="custom-font-2" style="font-size: 25px">Batch of*</label><br>
-                <input id="year" name="year" type="number" value="2020" readonly required><br><br><br>
+                <input id="year"  name="year" type="number" value="2020" readonly required><br><br><br>
 
                 <label for="regno" class="custom-font-2" style="font-size: 25px">Registration Number*</label><br>
-                <input name="regno" id="regno" type="number" required><br><br><br>
+                <input name="regno" class="normaltext" id="regno" type="number" required><br><br><br>
 
                 <label for="name" class="custom-font-2" style="font-size: 25px">Name*</label><br>
-                <input name="name" id="name" type="text" required><br><br><br>
+                <input name="name" class="normaltext" id="name" type="text" required onchange="document.getElementById('p_name').innerText = this.value"><br><br><br>
 
                 <label for="branch" class="custom-font-2" style="font-size: 25px">Branch*</label><br>
-                <input name="branch" id="branch" type="text" required><br><br><br>
+                <input name="branch" class="normaltext" id="branch" type="text" required><br><br><br>
 
                 <label for="aboutme" class="custom-font-2" style="font-size: 25px">About me*</label><br>
                 <textarea name="aboutme" id="aboutme" class="editor" required></textarea><br><br><br>
@@ -55,16 +55,21 @@
                     <a href="https://youtu.be/DQPKQEEbofE">Your performance</a><br><a href="https://testing123xyz">Your Art Work</a><br><br>Press CTRL+K to insert link</textarea><br><br><br>
 
                 <label for="photo" class="custom-font-2" style="font-size: 25px">Your Photo*</label><br>
-                <input name="photo" id="photo" type="file" required><br><br><br>
+                <input name="photo" id="photo" type="file" required onchange="document.getElementById('p_photo').src = window.URL.createObjectURL(this.files[0])"><br><br><br>
 
                 <label for="coverphoto" class="custom-font-2" style="font-size: 25px">Cover Photo*</label><br>
-                <input name="coverphoto" id="coverphoto" type="file" required><br><br><br>
+                <input name="coverphoto" id="coverphoto" type="file" required onchange="document.getElementById('p_coverphoto').src = window.URL.createObjectURL(this.files[0])"><br><br><br>
 
                 <label for="souvenir" class="custom-font-2" style="font-size: 25px">Souvenir (optional)</label><br>
-                <input name="souvenir" id="souvenir" type="file"><br><br><br>
+                <input name="souvenir" id="souvenir" type="file" onchange="document.getElementById('p_souvenir').src = window.URL.createObjectURL(this.files[0])"><br><br><br>
 
-                <input type="submit" class="btn btn-primary">
+                <br>
+
+                <input style="font-size: 20px;width: 100px" type="submit" onclick="confirmAction(event);" class="btn btn-primary">
             </form>
+            <br>
+            <button style="font-size: 20px; width: 100px" id="preview" class="btn" style="margin-bottom: 5px;">preview</button><br>
+
         </div>
         <br><br><br>
         <br><br><br>
@@ -72,8 +77,135 @@
     <div>
 
 
+    <link rel="stylesheet" href="{% static 'yearbook/alumni_profile.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-    <script>CKEDITOR.replaceAll('editor');</script>
+
+
+
+
+    <div class="container" id="p_container" style="margin-top: 20em;display: none;">
+        <div style="margin-bottom: 20em;">
+
+            <div class="fb-profile">
+                <img align="left" id="p_coverphoto"  class="fb-image-lg" alt="Profile image example"/>
+                <img align="left" id="p_photo" style="margin-right: 2em;" class="fb-image-profile thumbnail"  alt="Profile image example"/>
+                <div class="fb-profile-text" >
+                    <h1 id="p_name" style="margin-bottom: 3px;">{{ 'name' }}</h1>
+                    <h4 id="p_branch" style="margin-top: 8px; margin-bottom: 3px;">{{ 'branch' }}</h4>
+                    <h4 id="p_regno" style="margin-top: 8px;">{{ 'regno' }}</h4>
+                </div>
+            </div>
+
+            <hr style="margin-top: 8em; border-top: 2px solid #ddd;">
+
+            <div style="margin-top: 8em;">
+                <h1>
+                    About Me
+                </h1>
+                <hr>
+                <div id="p_aboutme">
+
+                </div>
+            </div>
+
+
+                <div style="margin-top: 5em;">
+                    <h1>
+                        Your Favourite Memory
+                    </h1>
+                    <hr>
+                    <div id="p_yfm">
+
+                    </div>
+                </div>
+
+
+
+                <div style="margin-top: 5em;">
+                    <h1 class="text-center">
+                        Souvenir
+                    </h1>
+                    <hr>
+                    <div>
+                        <img id="p_souvenir" width="80%" style="margin-right: auto;margin-left: auto;display: block;">
+                    </div>
+                </div>
+
+
+
+                <div style="margin-top: 8em; margin-bottom: 25vh;">
+                    <h3>
+                        Links
+                    </h3>
+                    <hr>
+                    <div style="font-size: 20px">
+                        <div id="p_links">
+
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script>
+        CKEDITOR.replace('aboutme');
+        CKEDITOR.replace('yfm');
+        CKEDITOR.replace('links');
+    </script>
+
+
+    <script>
+
+        warn = 1;
+
+
+        function confirmAction(e)
+        {
+            var confirmation = confirm("You won't be able to edit your entry once you submit.") ;
+
+            if (!confirmation)
+            {
+                e.preventDefault() ;
+                returnToPreviousPage();
+            }
+
+            return confirmation ;
+        }
+
+
+        $('#preview').on('click', function () {
+
+            $('#p_container').css('display', 'block');
+
+            $('.normaltext').each(function () {
+                var id = $(this).attr('id');
+                //console.log(id);
+                pid = '#p_' + id;
+                id = '#' + id;
+                //console.log($(id)[0]);
+                $(pid)[0].innerHTML = $(id)[0].value;
+            });
+
+            $('.editor').each(function () {
+                var id = $(this).attr('id');
+                var html = CKEDITOR.instances[id].getData();
+                $('#p_'+id)[0].innerHTML = html;
+            });
+
+            console.log($('#p_coverphoto').position().top);
+            window.scroll({left:0, top: $('#p_coverphoto').position().top, behavior: 'smooth'});
+        });
+
+    </script>
+
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 {% endblock content %}
