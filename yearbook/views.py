@@ -14,11 +14,18 @@ def home(request):
 def yearlist(request):
     regnos = None
     year = ""
+    namee = ""
     if request.method == 'GET':
         year = request.GET['year']
         regnos = YearbookData.objects.values('regno', 'name', 'photo').filter(year=year).order_by('regno').distinct()
 
-    return render(request, 'yearbook/yearlist.html', {'regnos': regnos ,'year': year})
+    if request.method == 'POST':
+        name = request.POST['name']
+        namee = name
+        regnos = YearbookData.objects.values('regno', 'name', 'photo').filter(name__contains=name).order_by('regno').distinct()
+        year = None
+
+    return render(request, 'yearbook/yearlist.html', {'regnos': regnos ,'year': year, 'name': namee})
 
 def alumni(request):
     profile = None

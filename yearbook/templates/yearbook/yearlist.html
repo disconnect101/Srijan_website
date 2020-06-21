@@ -21,6 +21,8 @@
         {% if year %}
             <center><div style=" margin: 0em 0 -25px 0;font-size: 55px;" class="custom-font">of</div></center>
             <center><div id="year" style=" margin: 0em 0 1.5em 0;font-size: 75px;" class="custom-font">{{ year }}</div></center>
+        {% else %}
+            <center><div style=" margin: 0em 0 1.5em 0;font-size: 55px;" class="custom-font">Search Result</div></center>
         {% endif %}
         <div class="row">
             <div class="col-lg-9">
@@ -29,7 +31,8 @@
                 </div>
             </div>
             <div class="col-lg-3">
-                <form method="GET" action="/yearbook/alumni" style="margin: 1em;"><input type="number" placeholder="registration no." name="regno"><button type="submit"><i class="fa fa-search"></i></button></form>
+                <form method="GET" action="/yearbook/alumni" style="margin: 1em;"><input  type="number" placeholder="registration no." name="regno"><button type="submit"><i class="fa fa-search"></i></button></form>
+                <form method="POST" action="/yearbook/list/" style="margin: 1em;">{% csrf_token %}<input type="text"  placeholder="Type Name" name="name"><button style="height: 50px" type="submit"><i class="fa fa-search"></i></button></form>
             </div>
         </div>
         <hr style="margin-top: 2em;">
