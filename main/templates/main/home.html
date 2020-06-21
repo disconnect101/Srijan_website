@@ -417,7 +417,7 @@
                                             {% if article.description and article.description.strip %}
                                                 <div style="line-height: 1.2;font-size: 12px" ><a style="color: #4d4d4d;" href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.description|truncatechars:70 }}</a></div>
                                             {% else %}
-                                                <div style="line-height: 1.2;font-size: 12px" ><a style="color: #4d4d4d;" href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.content|truncatechars:70 }}</a></div>
+                                                <div style="line-height: 1.2;font-size: 12px" ><a style="color: #4d4d4d;" href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.content|truncatechars:70|safe }}</a></div>
                                             {% endif %}
                                         </div>
                                     </div>
@@ -476,7 +476,7 @@
                                             {% if article.description and article.description.strip %}
                                                 <div style="line-height: 1.2;font-size: 12px" ><a style="color: #4d4d4d;" href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.description|truncatechars:70 }}</a></div>
                                             {% else %}
-                                                <div style="line-height: 1.2;font-size: 12px" ><a style="color: #4d4d4d;" href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.content|truncatechars:70 }}</a></div>
+                                                <div style="line-height: 1.2;font-size: 12px" ><a style="color: #4d4d4d;" href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.content|truncatechars:70|safe }}</a></div>
                                             {% endif %}
                                         </div>
                                     </div>
