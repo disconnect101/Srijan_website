@@ -15,6 +15,7 @@ def home(request):
 	publications = Publications.objects.all().order_by('-date')
 	all_articles = Articles.objects.all().order_by('-date')[:8]
 	featured_images = FeaturedImages.objects.all()
+	slideshow = Articles.objects.values('id', 'image', 'title', 'date').filter(id__in=[6, 3, 16, 15])
 
 	contributor_id = 1
 	contributor = Contributors.objects.get(id=contributor_id)
@@ -27,6 +28,7 @@ def home(request):
 	context['recentarticles'] = all_articles
 	context['featured_images'] = featured_images
 	context['contributor'] = contributor
+	context['slideshow'] = slideshow
 
 	return render(request, 'main/home.html', context)
 

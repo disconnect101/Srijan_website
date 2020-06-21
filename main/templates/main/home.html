@@ -58,7 +58,7 @@
 	<aside id="colorlib-hero">
 			<div class="flexslider">
 				<ul class="slides">
-			   	<li style="background-image: url({% static 'main/carousal-1.jpg' %});">
+			   	<!--li style="background-image: url({% static 'main/carousal-1.jpg' %});">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
@@ -88,7 +88,7 @@
 				   		</div>
 			   		</div>
 			   	</li>
-			   	<li style="background-image: url({% static 'main/carousal-3.jpeg' %});">
+			   	<li-- style="background-image: url({% static 'main/carousal-3.jpeg' %});">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
@@ -103,7 +103,7 @@
 				   		</div>
 			   		</div>
 			   	</li>
-			   	<li style="background-image: url({% static 'main/carousal-4.jpeg' %});">
+			   	<li- style="background-image: url({% static 'main/carousal-4.jpeg' %});">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
@@ -117,7 +117,28 @@
 				   			</div>
 				   		</div>
 			   		</div>
-			   	</li>
+                </li-->
+                {% for slide in slideshow %}
+
+                        <li style="background-image: url('/media/{{ slide.image }}');">
+                        <div class="overlay"></div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <a href="{% url 'articles' %}{{ "?id=" }}{{ slide.id }}">
+                                    <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+                                        <div class="slider-text-inner">
+                                            <div class="desc">
+                                                <h1><span class="text-center"><small>{{ forloop.counter }}</small></span>{{ slide.title }}</h1>
+                                                <h2><span>{{ slide.date }}</span></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                 {% endfor %}
+
 			  	</ul>
 		  	</div>
 		</aside>
