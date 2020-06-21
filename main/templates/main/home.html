@@ -398,8 +398,8 @@
                                     </div>
                                 {% endif %}
                             {% endfor %}
-                            <div class="col-lg-12" style="text-align: right;s">
-                            	<a href="/career/career_all/?type=all" style="color: white;">more articles...</a>
+                            <div class="col-lg-12" style="text-align: right;">
+                            	<a class="btn btn-primary" href="{% url 'career' %}{{ '?type=all' }}" style="color: white;">more articles...</a>
                         	</div>
 							
 						</div>
@@ -454,7 +454,7 @@
                                 {% endif %}
                             {% endfor %}
 							<div class="col-lg-12" style="text-align: right;">
-                            	<a href="/career/campus_all/" style="color: orange;">more articles...</a>
+                            	<a class="btn btn-primary" href="{% url 'campus' %}" style="color: white;">more articles...</a>
                         	</div>
 						</div>
 					</aside>
@@ -616,7 +616,7 @@
                     background-repeat: no-repeat;
                     margin-top: -2em;
                     position: relative;
-                    z-index: 3;
+                    z-index: 2;
                     }
             </style>
 				<hr class="type_5" >
@@ -651,7 +651,7 @@
 									</ul>
 								</div>
 								<div class="col-lg-6" style="text-align: right;">
-	                            	<a href="{% url 'sos' %}" style="color: orange;ali">more articles...</a>
+	                            	<a class="btn btn-primary" href="{% url 'sos' %}" style="color: white;">more articles...</a>
 	                        	</div>
 	                        </div>
 						</div>
@@ -697,7 +697,7 @@
 
 
 
-    <!--{% include 'main/footer.html' %}-->
+
 
 
 

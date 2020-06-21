@@ -17,19 +17,20 @@
 								<span class="category text-center">{{ article.title }} #{{ article.id }}</span>
 								<h2 class="text-center"><a href="#">{{ article.description }}</a></h2>
 								<div class="blog-image">
-									<div class="owl-carousel owl-carousel2 blog-item">
-										<div class="item">
-											<a href="{{ article.image.url  }}" class="blog image-popup-link" style="background-image: url({{ article.image.url  }});">
-											</a>
-										</div>
-                                        {% for article_image in article_images %}
+                                    {% if article_images.exists %}
+                                        <div class="owl-carousel owl-carousel2 blog-item">
                                             <div class="item">
-											<a href="{{ article_image.image.url }}" class="blog image-popup-link" style="background-image: url({{ article_image.image.url }});">
-											    </a>
-										    </div>
-                                        {% endfor %}
-									</div>
-                                    {% if not article_images.exists %}
+                                                <a href="{{ article.image.url  }}" class="blog image-popup-link" style="background-image: url({{ article.image.url  }});">
+                                                </a>
+                                            </div>
+                                            {% for article_image in article_images %}
+                                                <div class="item">
+                                                <a href="{{ article_image.image.url }}" class="blog image-popup-link" style="background-image: url({{ article_image.image.url }});">
+                                                    </a>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
                                         <a href="{{ article.image.url  }}" class="blog image-popup-link" style="background-image: url({{ article.image.url  }}); margin-bottom: 2em;">
 											</a>
                                     {% endif %}
