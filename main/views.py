@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import ArticleForm, CommentForm
-from .models import Articles, Comment, ArticleImages, Publications
+from .models import *
 from django.http import JsonResponse
 
 
@@ -14,6 +14,10 @@ def home(request):
 	sos_articles = Articles.objects.filter(category__in=['sos']).order_by('-date')[:5]
 	publications = Publications.objects.all().order_by('-date')
 	all_articles = Articles.objects.all().order_by('-date')[:8]
+	featured_images = FeaturedImages.objects.all()
+
+	contributor_id = 1
+	contributor = Contributors.objects.get(id=contributor_id)
 
 	context['articles'] = all_articles
 	context['career_articles'] = career_articles
@@ -21,6 +25,8 @@ def home(request):
 	context['sos_articles'] = sos_articles
 	context['publications'] = publications
 	context['recentarticles'] = all_articles
+	context['featured_images'] = featured_images
+	context['contributor'] = contributor
 
 	return render(request, 'main/home.html', context)
 

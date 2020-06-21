@@ -57,6 +57,19 @@ class Publications(models.Model):
 	def __str__(self):
 		return self.title
 
+class FeaturedImages(models.Model):
+	image = models.ImageField(upload_to='images/featured_images/', null=True, blank=True)
+	about = models.TextField(null=True, blank=True)
+
+class Contributors(models.Model):
+	name = models.CharField(max_length=50)
+	image = models.ImageField(upload_to='images/contributors/', null=True, blank=True)
+	year = models.IntegerField()
+	branch = models.CharField(max_length=50)
+
+	def __str__(self):
+		return self.name
+
 
 
 

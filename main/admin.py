@@ -9,4 +9,5 @@ admin.site.register(Articles)
 admin.site.register(Comment)
 admin.site.register(ArticleImages)
 admin.site.register(Publications)
-
+admin.site.register(FeaturedImages)
+admin.site.register(Contributors)

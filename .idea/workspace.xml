@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3a72d0d9-9e76-46a5-908e-ee5f876c93bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/main/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/main/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/main/template_blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/template_blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/main/viewpub.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/viewpub.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/template_static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/template_static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +138,7 @@
       <workItem from="1592476014266" duration="22860000" />
       <workItem from="1592527794464" duration="8219000" />
       <workItem from="1592666697184" duration="9602000" />
+      <workItem from="1592763350209" duration="8595000" />
     </task>
     <servers />
   </component>
@@ -175,10 +174,10 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="481" y="187" width="1022" height="732" key="SettingsEditor/65.25.1855.1055@65.25.1855.1055" timestamp="1592390534607" />
-    <state x="648" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1592666697196">
+    <state x="648" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1592763352781">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="648" y="380" key="com.intellij.ide.util.TipDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1592666697196" />
+    <state x="648" y="380" key="com.intellij.ide.util.TipDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1592763352781" />
     <state x="655" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1588175639138">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>

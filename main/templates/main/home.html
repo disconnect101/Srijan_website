@@ -393,7 +393,11 @@
                                         <a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}" class="featured-img" style="background-image: url({{ article.image.url }});top: 0em;left: 0em;"></a>
                                         <div class="desc" style="padding-top: 1em;">
                                             <span class="category" style="margin-bottom: 0.5em;letter-spacing: 1px;line-height: 1;">{{ article.title }}</span>
-                                            <div style="line-height: 1.2;font-size: 12px" ><a style="color: #4d4d4d;" href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.description|truncatechars:70 }}</a></div>
+                                            {% if article.description and article.description.strip %}
+                                                <div style="line-height: 1.2;font-size: 12px" ><a style="color: #4d4d4d;" href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.description|truncatechars:70 }}</a></div>
+                                            {% else %}
+                                                <div style="line-height: 1.2;font-size: 12px" ><a style="color: #4d4d4d;" href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.contents|truncatechars:70 }}</a></div>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 {% endif %}
@@ -448,7 +452,11 @@
                                         <a href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}" class="featured-img" style="background-image: url({{ article.image.url }});top: 0em;left: 0em;"></a>
                                         <div class="desc" style="padding-top: 1em;">
                                             <span class="category" style="margin-bottom: 0.5em;letter-spacing: 1px;line-height: 1;">{{ article.title }}</span>
-                                            <div style="line-height: 1.2;font-size: 12px" ><a style="color: #4d4d4d;" href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.description|truncatechars:70 }}</a></div>
+                                            {% if article.description and article.description.strip %}
+                                                <div style="line-height: 1.2;font-size: 12px" ><a style="color: #4d4d4d;" href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.description|truncatechars:70 }}</a></div>
+                                            {% else %}
+                                                <div style="line-height: 1.2;font-size: 12px" ><a style="color: #4d4d4d;" href="{% url 'articles' %}{{ "?id=" }}{{ article.id }}">{{ article.contents|truncatechars:70 }}</a></div>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 {% endif %}
@@ -552,49 +560,75 @@
 
 		
 
-		<section style="margin-bottom: 10em;margin-top: 4em;">
-			<div class="container">
-				<h1 class="custom-text">Pic of the week</h1>
+		<section style="margin-bottom: 10em;margin-top: 10em;">
+			<div class="colorlib-container">
+				<h1 class="custom-text text-center">Featured Shots</h1>
 				<hr>
-				<img src="{% static 'main/picoftheweek.jpg' %}"  style="width: 100%;margin-bottom: 1em;">
-				<div style="margin-top: 2em;background-color: rgb(250,250,250);">
-					<div class="container" >
-						<div class="row">
-							<div class="col-lg-3">
-								<img src="{% static 'main/user.png' %}" style="margin-top: 1em;margin-bottom: 1em;">
-							</div>
-							<div class="col-lg-8" style="margin-top: 3em;">
-								<h3 style="margin: auto;" >By- Name Sirname year branch</h3>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+
+                <aside id="colorlib-hero">
+                    <div class="flexslider">
+                        <ul class="slides">
+                            {% for featured_image in featured_images %}
+                                <li style="min-height: 750px;background-image: url({{ featured_image.image.url }});">
+                                    <div class="overlay"></div>
+
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+
+				<div style="margin-top: 2em;">
+
+
+                            <div class="row" style="width: 100%">
+                                 <div  class="col-lg-5" style="padding: 1.5em;display: block;width: 50%;margin:2em auto;background-color: white">
+                                    <div class="col-lg-4">
+                                        <img src="{{ contributor.image.url }}"  style="width: 100%">
+                                    </div>
+                                    <div class="col-lg-8" style="margin-top: 1.5em;margin-bottom: 1.5em">
+                                        <h3 style="margin: auto;margin-bottom: 15px;" >By-<br> </h3>
+                                        <h4 style="margin-bottom: 5px;">{{ contributor.name }} <br> </h4>
+                                        <h4 style="margin-bottom: 5px;">{{ contributor.branch }}</h4>
+                                        <h4 style="margin-bottom: 5px;">3rd Year</h4>
+                                    </div>
+                                 </div>
+                            </div>
+
+                </div>
+
+
 			
 
 		
-		</section>
+		    </section>
 
 
 		<section style="background-image: url('/static/main/videoback.png');background-position: center;padding-bottom: 8em;">
 			<div class="container" >
 				<h1 style="color: white;margin-top: 3em;">Featured Video</h1>
 				<hr>
-				<iframe allowfullscreen width="100%" style="height: 65vh;" src="https://www.youtube.com/embed/f1QGnq9jUU0">
+				<iframe allowfullscreen width="100%" style="height: 65vh;" src="https://www.youtube.com/embed/pYhfTvKSR3E">
+
 				</iframe>
-				<div class="text-center" style="margin-top: 2em;background-color: rgba(255,255,255,0.5);padding: 2em 3em 2em 2em;">
+				<div class="text-center" style="margin-top: 2em;background-color: rgba(255,255,255,0.8);padding: 2em 3em 2em 2em;">
 					
 						<div>
 							<h2 style="margin-top: em;">
 								About the Video	
 							</h2>
-							<hr>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							<hr style="height: 1px;border-top: 1px; background-color: black;">
+							<p>
+                            Swagat is the Annual Freshers' Festival of MNNIT Allahabad. The new inductees in the Media House of MNNIT (MHM)
+                            Family have created this Aftermovie of Swagat 2019 catching glimpses of the events leading upto Swagat. Hope you
+                            enjoy them!
+                            </p>
+                            <p>
+                            Credits: Videography and Video editing department of Media House of MNNIT  <br>
+                            First Years: <br>
+                            Anant, Aravind, Bhavi, Hitkarsh, Pranavi.
+                            </p>
 
 						</div>
 					
