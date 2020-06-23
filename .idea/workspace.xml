@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a72d0d9-9e76-46a5-908e-ee5f876c93bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/main/templates/main/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/main/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +135,7 @@
       <workItem from="1592527794464" duration="8219000" />
       <workItem from="1592666697184" duration="9602000" />
       <workItem from="1592763350209" duration="17404000" />
-      <workItem from="1592943111564" duration="2892000" />
+      <workItem from="1592943111564" duration="3010000" />
     </task>
     <servers />
   </component>
