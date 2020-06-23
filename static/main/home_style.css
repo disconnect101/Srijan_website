@@ -1,0 +1,15 @@
+@media (min-width: 992px) {
+    .featured-shots {
+        min-height: 1000px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .featured-shots {
+        min-height: 700px !important;
+    }
+}
+
+.featured-shots{
+    cursor: pointer;
+}

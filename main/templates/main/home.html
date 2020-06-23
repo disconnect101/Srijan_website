@@ -590,7 +590,7 @@
                     <div class="flexslider">
                         <ul class="slides">
                             {% for featured_image in featured_images %}
-                                <li style="min-height: 750px;background-image: url({{ featured_image.image.url }});">
+                                <li href="{{ featured_image.image.url }}" class="featured-shots image-popup-link" style="background-image: url({{ featured_image.image.url }});">
                                     <div class="overlay"></div>
 
                                 </li>
@@ -606,7 +606,7 @@
                             <div class="row" style="width: 100%">
                                  <div  class="col-lg-5" style="padding: 1.5em;display: block;width: 50%;margin:2em auto;background-color: lightgrey">
                                     <div class="col-lg-4">
-                                        <img src="{{ contributor.image.url }}"  style="width: 100%">
+                                        <img href="{{ contributor.image.url }}" class="image-popup-link" src="{{ contributor.image.url }}"  style="width: 100%;cursor: pointer">
                                     </div>
                                     <div class="col-lg-8" style="margin-top: 1.5em;margin-bottom: 1.5em">
                                         <h3 style="margin: auto;margin-bottom: 15px;" >By-<br> </h3>
