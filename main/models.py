@@ -5,6 +5,7 @@ from django.utils import timezone
 class Articles(models.Model):
 	title = models.CharField(max_length=500)
 	author = models.CharField(max_length=100)
+	author_id = models.IntegerField(default=0)
 	content = models.TextField()
 	description = models.TextField(null=True,blank=True)
 
@@ -64,8 +65,9 @@ class FeaturedImages(models.Model):
 class Contributors(models.Model):
 	name = models.CharField(max_length=50)
 	image = models.ImageField(upload_to='images/contributors/', null=True, blank=True)
-	year = models.IntegerField()
+	year = models.CharField(max_length=50)
 	branch = models.CharField(max_length=50)
+	prog = models.CharField(max_length=50, default='B.Tech')
 
 	def __str__(self):
 		return self.name

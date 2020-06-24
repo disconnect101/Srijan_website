@@ -54,6 +54,7 @@ def articles(request):
 	id = request.GET['id']
 	comments = Comment.objects.filter(article_id=id).order_by('-date')
 	article = Articles.objects.get(id=id)
+	contributor = Contributors.objects.get(id=article.author_id)
 	article_images = ArticleImages.objects.filter(article_id=id)
 	recentarticles = Articles.objects.order_by('-date')[:6]
 	all_articles_images = Articles.objects.order_by('date')[:8]
@@ -64,7 +65,7 @@ def articles(request):
 	#article = []
 	#recentarticles = []
 
-	return render(request, 'main/template_blog.html' , {'article': article, 'article_images': article_images, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images, 'comments': comments })
+	return render(request, 'main/template_blog.html' , {'contributor': contributor, 'article': article, 'article_images': article_images, 'recentarticles': recentarticles, 'all_articles_images': all_articles_images, 'comments': comments })
 
 
 def career(request):
