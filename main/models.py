@@ -65,9 +65,9 @@ class FeaturedImages(models.Model):
 class Contributors(models.Model):
 	name = models.CharField(max_length=50)
 	image = models.ImageField(upload_to='images/contributors/', null=True, blank=True)
-	year = models.CharField(max_length=50,blank=True,null=True)
-	branch = models.CharField(max_length=50,blank=True,null=True)
-	prog = models.CharField(max_length=50, default='B.Tech',blank=True,null=True)
+	year = models.CharField(max_length=50,blank=True,default='0')
+	branch = models.CharField(max_length=50,blank=True,default='branch')
+	prog = models.CharField(max_length=50, default='B.Tech',blank=True)
 
 	def __str__(self):
 		return self.name
