@@ -20,6 +20,17 @@
 .custom-font-3 {
 	font-family: 'braxtonregular';
 }
+
+@media (max-width: 768px) {
+	.custom-font-3{
+		font-size: 70px;
+	}
+}
+@media (min-width: 768px) {
+	.custom-font-3{
+		font-size: 120px;
+	}
+}
 /*
 .regno-list-item:hover {
 	box-shadow: 0 3px 5px 0 rgba(0,0,0,0.5);
