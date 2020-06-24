@@ -1,6 +1,6 @@
 @font-face {
-    font-family: midnightminutes;
-    src: url("/static/yearbook/midnight_minutes/MidnightMinutes_DEMO.otf") format("opentype");
+    font-family: braxtonregular;
+    src: url("/static/yearbook/Braxton/BraxtonDemo-Regular.otf") format("opentype");
 }
 
 
@@ -18,7 +18,7 @@
 }
 
 .custom-font-3 {
-	font-family: 'midnightminutes';
+	font-family: 'braxtonregular';
 }
 /*
 .regno-list-item:hover {
