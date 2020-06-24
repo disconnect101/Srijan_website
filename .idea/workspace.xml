@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3a72d0d9-9e76-46a5-908e-ee5f876c93bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srijan/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/srijan/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/templates/yearbook/yearlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/templates/yearbook/yearlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +138,7 @@
       <workItem from="1592666697184" duration="9602000" />
       <workItem from="1592763350209" duration="17404000" />
       <workItem from="1592943111564" duration="8979000" />
-      <workItem from="1593014324501" duration="5135000" />
+      <workItem from="1593014324501" duration="7307000" />
     </task>
     <servers />
   </component>

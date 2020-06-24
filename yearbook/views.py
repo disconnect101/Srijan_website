@@ -30,8 +30,13 @@ def yearlist(request):
 def alumni(request):
     profile = None
     if request.method == 'GET':
+
         regno = request.GET['regno']
-        profile = YearbookData.objects.get(regno=regno)
+        try:
+            profile = YearbookData.objects.get(regno=regno)
+        except:
+            messages.error(request, "There is no entry for this registration number")
+            return render(request, 'yearbook/yearlist.html')
 
     return render(request, 'yearbook/alumni.html', {'profile': profile})
 

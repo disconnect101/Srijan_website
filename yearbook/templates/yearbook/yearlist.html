@@ -15,7 +15,7 @@
 
 
 
-    <div class="container" style="/*background: url('/media/images/newscroll.png') no-repeat; background-size: cover;*/margin-bottom: 5em;">
+    <div class="container" style="/*background: url('/media/images/newscroll.png') no-repeat; background-size: cover;*/margin-bottom: 20em;">
         <center><div style="margin: 1em 0 0em 0;font-size: 120px;color: orange" class="custom-font-3"><b>Pensieve</b></div></center>
 
         <center><div style=" margin: 1em 0 -25px 0;font-size: 65px;" class="custom-font">YearBook</div></center>
@@ -36,6 +36,13 @@
                 <form method="POST" action="/yearbook/list/" style="margin: 1em;">{% csrf_token %}<input type="text"  placeholder="Type Name" name="name"><button style="height: 50px" type="submit"><i class="fa fa-search"></i></button></form>
             </div>
         </div>
+                {% if messages %}
+                    {% for message in messages %}
+                     <div class="alert alert-danger" role="alert">
+                        {{ message }}
+                     {% endfor %}
+                    </div>
+                {% endif %}
         <hr style="margin-top: 2em;">
 
         <div id="regnolist" style="margin-bottom: 5em;">
