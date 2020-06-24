@@ -1,3 +1,9 @@
+@font-face {
+    font-family: midnightminutes;
+    src: url("/static/yearbook/midnight_minutes/MidnightMinutes_DEMO.otf") format("opentype");
+}
+
+
 .custom-font {
 	font-family: 'Tangerine', cursive;
 }
@@ -9,6 +15,10 @@
 .custom-font-2 {
 	font-family: 'Lobster', cursive;
 	font-family: 'Montserrat', sans-serif;
+}
+
+.custom-font-3 {
+	font-family: 'midnightminutes';
 }
 /*
 .regno-list-item:hover {
