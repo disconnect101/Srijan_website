@@ -8,22 +8,100 @@
 
 
 
-    <div class="container">
+
+    <div class="container" style="margin-bottom: 10em;">
         <div style="background-color: rgba(255,255,255,0.9);padding: 2em 2em 1em 2em;margin-top: 2em;margin-bottom: 2em;" >
             <h1>About Us</h1>
             <hr>
             <div class="blog-entry">
                 <div class="desc" >
-                    <p class="first-letra">
+                    <p class="first-letra" style="font-size: 20px">
                         Till now Srijan was limited to the realms of paper, but now we are expanding to cover more significant topics and the intricacies of college life.
                         A team of 29 literary and technical enthusiasts presents before you the first online edition of Srijan!
                         <br>
                         <br>
-                        Website maintained by Aditya Gupta and Amisha Agarwal
+                       
                     </p>
                 </div>
 
                 
+
+
+
+
+
+
+
+
+                <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+                <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+                <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <!------ Include the above in your HEAD tag ---------->
+
+                <!-- Team -->
+                <section id="team" class="pb-5">
+                    <div class="container">
+                        <h5 class="section-title h1">Site Designed and Maintained By</h5>
+                        <div class="row mx-auto">
+                            
+                            <!-- Team member -->
+                            <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+                                <div class="">
+                                    <div class="mainflip">
+                                        <div class="frontside">
+                                            <div class="card">
+                                                <div class="card-body text-center">
+                                                    <div class="image-popup-link" href="/static/main/aditya.jpg" id="img" style="margin: 0 auto 1em;background-image: url('/static/main/aditya.jpg');background-size: cover;background-position: center;cursor: pointer;"><!--img class=" img-fluid" src="/static/main/amisha.jpg" alt="card image"--></div>
+                                                    <h2 class="card-title" style="font-style: normal;margin-bottom: 10px">Aditya Gupta</h2>
+                                                    <p class="card-text">
+                                                         <h5 style="margin-bottom: 5px;font-size: 20px">B.Tech</h5> <div style="margin-bottom: 2px;font-size: 15px">Computer Science and Engineering <br /> 3rd Year</div> 
+                                                    </p>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ./Team member -->
+                            <!-- Team member -->
+                            <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+                                <div class="">
+                                    <div class="mainflip">
+                                        <div class="frontside">
+                                            <div class="card">
+                                                <div class="card-body text-center">
+                                                    <div class="image-popup-link" href="/static/main/amisha.jpg" id="img" style="margin: 0 auto 1em;background-image: url('/static/main/amisha.jpg');background-size: cover;background-position: center;cursor: pointer;"><!--img class=" img-fluid" src="/static/main/amisha.jpg" alt="card image"--></div>
+                                                    <h2 class="card-title" style="font-style: normal;margin-bottom: 10px">Amisha Agrawal</h2>
+                                                    <p class="card-text">
+                                                         <h5 style="margin-bottom: 5px;font-size: 20px">B.Tech</h5> <div style="margin-bottom: 2px;font-size: 15px">Electronics and Communications Engineering<br /> 3rd Year</div> 
+                                                    </p>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ./Team member -->
+                            
+
+                        </div>
+                    </div>
+                </section>
+    <!-- Team -->
+
+
+
+
+
+
+
+
+
+
 
 
             </div>
@@ -35,6 +113,6 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
 	</div>
 
-
+    {% include 'main/footer.html' %}
 
 {% endblock %}
