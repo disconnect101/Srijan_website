@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3a72d0d9-9e76-46a5-908e-ee5f876c93bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/yearbook/alumni_profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/yearbook/alumni_profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yearbook/templates/yearbook/alumni.html" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/templates/yearbook/alumni.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/yearbook/yearbook_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/yearbook/yearbook_script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/templates/yearbook/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/templates/yearbook/upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yearbook/templates/yearbook/yearlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/yearbook/templates/yearbook/yearlist.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +141,7 @@
       <workItem from="1592943111564" duration="8979000" />
       <workItem from="1593014324501" duration="9486000" />
       <workItem from="1593318671043" duration="1213000" />
-      <workItem from="1593377585958" duration="6336000" />
+      <workItem from="1593377585958" duration="8868000" />
     </task>
     <servers />
   </component>

@@ -10,6 +10,13 @@ $(document).ready(function () {
         $('#toggle-gallery').on('click', function () {
         $('#imagelist').css('display', 'block');
         $('#regnolist').css('display', 'none');
+
+        window.scrollBy({
+          top: 400, // could be negative value
+          left: 0,
+          behavior: 'smooth'
+        });
+
     });
 
     $('#toggle-regno').on('click', function () {

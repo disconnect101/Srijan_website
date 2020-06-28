@@ -113,7 +113,7 @@
             </div>
 
 
-                <div style="margin-top: 5em;">
+                <div id="div_yfm" style="margin-top: 5em;">
                     <h1>
                         Your Favourite Memory
                     </h1>
@@ -125,7 +125,7 @@
 
 
 
-                <div style="margin-top: 5em;">
+                <div id="div_souvenir" style="margin-top: 5em;">
                     <h1 class="text-center">
                         Souvenir
                     </h1>
@@ -137,7 +137,7 @@
 
 
 
-                <div style="margin-top: 8em; margin-bottom: 25vh;">
+                <div id="div_links" style="margin-top: 8em; margin-bottom: 25vh;">
                     <h3>
                         Links
                     </h3>
@@ -201,8 +201,20 @@
                 var id = $(this).attr('id');
                 var html = CKEDITOR.instances[id].getData();
                 $('#p_'+id)[0].innerHTML = html;
+                if((id=='yfm'||id=='links')){
+                    if((html==null || html=="" || html==" "))
+                        $('#div_'+id).css('display', 'none');
+                    else
+                        $('#div_'+id).css('display', 'block');
+                }
             });
 
+            if($('#souvenir').val()==null || $('#souvenir').val()==""){
+                $('#div_souvenir').css('display', 'none');
+            }
+            else{
+                $('#div_souvenir').css('display', 'block');
+            }
             console.log($('#p_coverphoto').position().top);
             window.scroll({left:0, top: $('#p_coverphoto').position().top, behavior: 'smooth'});
         });
