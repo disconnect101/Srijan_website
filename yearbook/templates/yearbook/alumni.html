@@ -20,13 +20,20 @@
         <div style="margin-bottom: 20em;">
 
             <div class="fb-profile">
-                <img align="left"  class="fb-image-lg" src="{{ profile.coverphoto.url }}" alt="Profile image example"/>
-                <img align="left" style="margin-right: 2em;" class="fb-image-profile thumbnail" src="{{ profile.photo.url }}" alt="Profile image example"/>
-                <div class="fb-profile-text" >
-                    <h1 style="margin-bottom: 3px;">{{ profile.name }}</h1>
-                    <h4 style="margin-top: 8px; margin-bottom: 3px;">{{ profile.branch }}</h4>
-                    <h4 style="margin-top: 8px;">{{ profile.regno }}</h4>
+                <img class="fb-image-lg" style="width: 100%;display: block;position: relative" src="{{ profile.coverphoto.url }}" alt="Profile image example"/>
+
+                <div class="row">
+                    <div  class="fb-image-profile thumbnail col-xs-4" style="margin-right: 2em;position: relative;z-index: 1">
+                        <img src="{{ profile.photo.url }}" alt="Profile image example" style="height: 100%;width: 100%;object-fit: cover"/>
+                    </div>
+                    <!--div class="fb-image-profile thumbnail" style="margin-right: 2em;background-image: url({{ profile.photo.url }});display: block"></div-->
+                    <div class="fb-profile-text col-xs-8" >
+                        <h1 style="margin-bottom: 3px;">{{ profile.name }}</h1>
+                        <h4 style="margin-top: 8px; margin-bottom: 3px;">{{ profile.branch }}</h4>
+                        <h4 style="margin-top: 8px;">{{ profile.regno }}</h4>
+                    </div>
                 </div>
+
             </div>
 
             <hr style="margin-top: 8em; border-top: 2px solid #ddd;">
