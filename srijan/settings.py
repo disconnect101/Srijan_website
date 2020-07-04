@@ -99,6 +99,10 @@ DATABASES = {
         'PASSWORD': 'mysql!!',
         'HOST': 'localhost',
         'PORT': '3306',
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+            'use_unicode': True,
+        },
     }
 }
 
