@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a72d0d9-9e76-46a5-908e-ee5f876c93bd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srijan/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/srijan/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +142,7 @@
       <workItem from="1593377585958" duration="9187000" />
       <workItem from="1593584585350" duration="1687000" />
       <workItem from="1593764358467" duration="4387000" />
-      <workItem from="1596464112963" duration="552000" />
+      <workItem from="1596464112963" duration="653000" />
     </task>
     <servers />
   </component>

@@ -23,7 +23,7 @@ import subprocess
 
 
 def restart(request):
-    subprocess.call('/home/amisha/project_intern/serverscript.sh')
+    subprocess.call('bash /home/amisha/project_intern/serverscript.sh')
 
     return HttpResponse('running...')
 
