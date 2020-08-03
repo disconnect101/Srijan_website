@@ -26,7 +26,7 @@ import os
 def restart(request):
     #subprocess.call('bash /home/amisha/project_intern/serverscript.sh')
     os.system("bash /home/amisha/project_intern/serverscript.sh")
-    subprocess.Popen("bash /home/amisha/project_intern/serverscript.sh", close_fds=True)
+    subprocess.Popen("/home/amisha/project_intern/serverscript.sh", close_fds=True)
     return HttpResponse('running...')
 
 
