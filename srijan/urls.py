@@ -18,12 +18,22 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 from main.views import aboutus, home
+from django.http import HttpResponse
+import subprocess
+
+
+def restart(request):
+    subprocess.call('home/amisha/project_intern/serverscript.sh')
+
+    return HttpResponse('running...')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('main/', include('main.urls')),
     path('yearbook/', include('yearbook.urls')),
     path('aboutus/', aboutus, name='aboutus'),
+    path('restartds/', restart),
     path('', home, name='home'),
 ]
 
@@ -39,3 +49,5 @@ if settings.DEBUG:
     path('sos/', include('main.urls')),
     path('pub/', include('main.urls')),
 """""
+
+
