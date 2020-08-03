@@ -20,11 +20,12 @@ from django.conf.urls.static import static
 from main.views import aboutus, home
 from django.http import HttpResponse
 import subprocess
+import os
 
 
 def restart(request):
-    subprocess.call('bash /home/amisha/project_intern/serverscript.sh')
-
+    #subprocess.call('bash /home/amisha/project_intern/serverscript.sh')
+    os.system("bash /home/amisha/project_intern/serverscript.sh")
     return HttpResponse('running...')
 
 
